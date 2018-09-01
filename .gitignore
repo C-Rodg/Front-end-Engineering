@@ -2,6 +2,7 @@
 node_modules/
 dist/
 builds/
+OffTheRecord.js
 
 # OS generated files #
 ######################

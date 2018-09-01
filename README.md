@@ -58,7 +58,13 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 - [Algorithms in Motion](https://www.manning.com/livevideo/algorithms-in-motion)
 
-### Book Resources
+- [Beau Teaches Javascript](https://medium.freecodecamp.org/my-giant-javascript-basics-course-is-now-live-on-youtube-and-its-100-free-9020a21bbc27)
+
+### Reading Resources
+
+- [Geeks for Geeks](https://www.geeksforgeeks.org/)
+
+- [Coding University](https://github.com/jwasham/coding-interview-university)
 
 - [Cracking the Coding Interview](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/)
 
