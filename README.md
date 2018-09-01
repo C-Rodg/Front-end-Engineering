@@ -22,6 +22,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 ## Problems
 
 - Reverse String
+- Reverse Integer
 - Palindrome String
 - Anagram String
 - Chunk Array
@@ -33,6 +34,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 - Time complexity (Big O)
 - Space complexity
+- What is the expected size of this?
 - Can I destroy the data structure?
 
 ## Runtimes - Big O Notation
@@ -43,6 +45,10 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Quasilinear Time O(n \* log n): divide and conquer, but must iterate through n. Most sorts are quasilinear.
 - Quadratic Time O(n^2): every element has to be compared to every other element
 - Exponential Time O(2^n): for every one more element, processing power required doubles.
+
+## Notes
+
+- Call stack can handle ~10,000 frames before stack overflow
 
 ### Video Resources
 
