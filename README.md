@@ -21,9 +21,28 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 ## Problems
 
+- Reverse String
+- Palindrome String
+- Anagram String
+- Chunk Array
 - Fibonacci Sequence (with memoization)
 - Spiral Matrix
 - Connected Cells Graph
+
+## Common Considerations
+
+- Time complexity (Big O)
+- Space complexity
+- Can I destroy the data structure?
+
+## Runtimes - Big O Notation
+
+- Constant Time O(1): no matter how many elements, will always take the same time.
+- Logarithmic Time O(log n): occurs when doubling number of elements doesn't double the amount of work. Most searches of sorted data are logarithmic.
+- Linear Time O(n): iterating through all elements. 1 more element = 1 more unit of work.
+- Quasilinear Time O(n \* log n): divide and conquer, but must iterate through n. Most sorts are quasilinear.
+- Quadratic Time O(n^2): every element has to be compared to every other element
+- Exponential Time O(2^n): for every one more element, processing power required doubles.
 
 ### Video Resources
 
