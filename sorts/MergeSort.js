@@ -1,5 +1,8 @@
 // Runtime: O(n * log n)
 
+// **RECURSIVE** //
+
+// Summary - split arrays to 1 with recursion, then merge sorted arrays
 function mergeSort(arr) {
 	// Base case
 	if (arr.length < 2) {
@@ -28,3 +31,4 @@ function merge(left, right) {
 
 // Split arrays until size 1 with recursion
 // then merge sorted arrays together until final result
+// When needing a sort, this is a good one to grab.
