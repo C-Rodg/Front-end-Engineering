@@ -28,3 +28,26 @@ function quickSort(arr) {
 // Choose pivot and split into left and right recursively
 // last element is often chosen as pivot, but better option might be
 // comparing [0], [mid], [arr.length -1] indexes to find middle value which leads to better performance
+
+// Random pivot quicksort (more effecient on average)
+function quickSortRandomPivot(arr) {
+	// Base case
+	if (arr.length < 2) {
+		return arr;
+	}
+	const pivotIndex = Math.floor(Math.random() * arr.length);
+	const pivot = arr[pivotIndex];
+	const left = [];
+	const right = [];
+	for (let i = 0; i < arr.length; i++) {
+		if (i === pivotIndex) {
+			continue;
+		}
+		if (arr[i] < pivot) {
+			left.push(arr[i]);
+		} else {
+			right.push(arr[i]);
+		}
+	}
+	return [...quickSortRandomPivot(left), pivot, ...quickSortRandomPivot(right)];
+}

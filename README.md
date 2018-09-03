@@ -36,6 +36,9 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Space complexity
 - What is the expected size of this?
 - Can I destroy the data structure?
+- Can there be negative numbers?
+- Can there be duplicates?
+- Is the list already sorted?
 
 ## Runtimes - Big O Notation
 
@@ -63,6 +66,8 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 ### Reading Resources
 
 - [Geeks for Geeks](https://www.geeksforgeeks.org/)
+
+- [LeetCode](https://leetcode.com/)
 
 - [Coding University](https://github.com/jwasham/coding-interview-university)
 

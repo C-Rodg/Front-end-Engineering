@@ -2,6 +2,55 @@
 
 // TODO TREE STRUCTURE
 
+// Clarification question - is it a binary tree or binary search tree?
+
+// serialize() {
+// 	if (!this.root) {
+// 		return "";
+// 	}
+// 	const results = [];
+// 	const queue = [this.root];
+// 	while(queue.length) {
+// 		const current = queue.shift();
+// 		if (current) {
+// 			results.push(current.data);
+// 			queue.push(node.left || null);
+// 			queue.push(node.right || null);
+// 		} else {
+// 			results.push(null);
+// 		}
+// 	}
+//  while (results[results.length - 1] === null) {
+//	  results.pop();
+//  }
+//  return JSON.stringify(results);
+// }
+
+deserialize(str) {
+	const arr = JSON.parse(str);
+	if (!arr.length) {
+		return null;
+	}
+	const tree = new Node(arr.shift());
+	const queue = [tree];
+	while (queue.length) {
+		let current = queue.shift();
+		let left = arr.shift();
+		let right = arr.shift();
+		if (left !== null) {
+			current.left = new Node(left);
+			queue.push(current.left);
+		}
+		if (right !== null) {
+			current.right = new Node(right);
+			queue.push(current.right);
+		}
+	}
+	return tree;
+}
+
+
+
 // Binary Search on a sorted array - iterative
 function binarySearch(arr, item) {
 	let low = 0;

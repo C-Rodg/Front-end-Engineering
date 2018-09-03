@@ -38,3 +38,22 @@ function fibIterative(n) {
 
 	return results[n];
 }
+
+// Bottom up approach O(n)
+// Memory implications of doing things this way can be
+// fixed by only having bottomUp as a max length of 3.
+// But since this isn't recursive performance may be better.
+function fibBottom(n) {
+	if (n <= 2) {
+		return 1;
+	}
+	const bottomUp = [];
+	bottomUp[0] = 0;
+	bottomUp[1] = 1;
+	bottomUp[2] = 1;
+
+	for (let i = 3; i <= n; i++) {
+		bottomUp[i] = bottomUp[i - 1] + bottomUp[i - 2];
+	}
+	return bottomUp[n];
+}
