@@ -1,56 +1,133 @@
 // Searches run in O(log n) time
-
-// TODO TREE STRUCTURE
+// Downsides- no random access, tree can get unbalanced
 
 // Clarification question - is it a binary tree or binary search tree?
 
-// serialize() {
-// 	if (!this.root) {
-// 		return "";
-// 	}
-// 	const results = [];
-// 	const queue = [this.root];
-// 	while(queue.length) {
-// 		const current = queue.shift();
-// 		if (current) {
-// 			results.push(current.data);
-// 			queue.push(node.left || null);
-// 			queue.push(node.right || null);
-// 		} else {
-// 			results.push(null);
-// 		}
-// 	}
-//  while (results[results.length - 1] === null) {
-//	  results.pop();
-//  }
-//  return JSON.stringify(results);
-// }
+// Create a node class used to implement a BST
+class Node {
+	constructor(data) {
+		this.data = data;
+		this.left = null;
+		this.right = null;
+	}
 
-deserialize(str) {
-	const arr = JSON.parse(str);
-	if (!arr.length) {
+	insert(data) {
+		if (data <= this.data && this.left) {
+			this.left.insert(data);
+		} else if (data <= this.data) {
+			this.left = new Node(data);
+		} else if (data > this.data && this.right) {
+			this.right.insert(data);
+		} else if (data > this.data) {
+			this.right = new Node(data);
+		}
+	}
+
+	contains(data) {
+		// Base case
+		if (data === this.data) {
+			return this;
+		}
+
+		if (data < this.data && this.left) {
+			return this.left.contains(data);
+		} else if (data > this.data && this.right) {
+			return this.right.contains(data);
+		}
+
 		return null;
 	}
-	const tree = new Node(arr.shift());
-	const queue = [tree];
-	while (queue.length) {
-		let current = queue.shift();
-		let left = arr.shift();
-		let right = arr.shift();
-		if (left !== null) {
-			current.left = new Node(left);
-			queue.push(current.left);
-		}
-		if (right !== null) {
-			current.right = new Node(right);
-			queue.push(current.right);
-		}
+}
+// ---------------------------------- //
+// BST class with the ability to serial and deserialize
+class BST {
+	constructor() {
+		this.root = null;
 	}
-	return tree;
+
+	// Convert tree to string using BST
+	serialize() {
+		if (!this.root) {
+			return '';
+		}
+		const results = [];
+		const nodeQueue = [this.root];
+		while (nodeQueue.length) {
+			const current = nodeQueue.shift();
+			if (current) {
+				results.push(current.data);
+				nodeQueue.push(current.left || null);
+				nodeQueue.push(current.right || null);
+			} else {
+				// null marker
+				results.push('null');
+			}
+		}
+
+		// Strip off the last leaf null nodes
+		while (results[results.length - 1] === 'null') {
+			results.pop();
+		}
+
+		// return final string
+		return JSON.stringify(results);
+	}
+
+	deserialize(str) {
+		const arr = JSON.parse(str);
+		if (!arr.length) {
+			return null;
+		}
+		const tree = new BST();
+		const rootNode = new Node(arr.shift());
+		tree.root = rootNode;
+
+		const queue = [rootNode];
+		while (queue.length) {
+			const currentNode = queue.shift();
+			const left = arr.shift();
+			const right = arr.shift();
+
+			if (left !== null) {
+				currentNode.left = new Node(left);
+				queue.push(currentNode.left);
+			}
+
+			if (right !== null) {
+				currentNode.right = new Node(right);
+				queue.push(currentNode.right);
+			}
+		}
+
+		return tree;
+	}
+}
+// ---------------------------------- //
+// Validate a BST
+function validate(node, min = null, max = null) {
+	// Base Case #1
+	if (max !== null && node.data > max) {
+		return false;
+	}
+	// Base Case #2
+	if (min !== null && node.data < min) {
+		return false;
+	}
+
+	// Move to the left, so set a new max value
+	if (node.left && !validate(node.left, min, node.data)) {
+		return false;
+	}
+
+	// Move to the right, so set a new min value
+	if (node.right && !validate(node.right, node.data, max)) {
+		return false;
+	}
+
+	return true;
 }
 
-
-
+// ---------------------------------- //
 // Binary Search on a sorted array - iterative
 function binarySearch(arr, item) {
 	let low = 0;
