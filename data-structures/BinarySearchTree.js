@@ -102,6 +102,40 @@ class BST {
 		return tree;
 	}
 }
+function recursiveDFSPreorder(node, fn) {
+	if (!node) {
+		return;
+	}
+
+	// Call on original node
+	fn(node);
+
+	recursiveDFSPreorder(node.left, fn);
+	recursiveDFSPreorder(node.right, fn);
+}
+
+function recursiveDFSInorder(node, fn) {
+	if (node.left) {
+		recursiveDFSInorder(node.left, fn);
+	}
+
+	fn(node);
+
+	if (node.right) {
+		recursiveDFSInorder(node.right, fn);
+	}
+}
+
+function recursiveDFSPostorder(node, fn) {
+	if (node.left) {
+		recursiveDFSPostorder(node.left, fn);
+	}
+	if (node.right) {
+		recursiveDFSPostorder(node.right, fn);
+	}
+	fn(node);
+}
+
 // ---------------------------------- //
 // Validate a BST
 function validate(node, min = null, max = null) {

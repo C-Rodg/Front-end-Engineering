@@ -9,6 +9,11 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Linked List
 - Tree
 - Binary Search Tree
+  - Breadth First Search (BFS)
+  - Depth First Search (DFS)
+    - Preorder (root, left, right)
+    - Inorder (left, root, right)
+    - Postorder (left, right, root)
 - AVL Tree
 
 ## Sorts
