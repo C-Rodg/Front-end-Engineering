@@ -7,6 +7,10 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Stack
 - Queue
 - Linked List
+- Hash Table
+- Sets
+- Trie
+- Heap
 - Tree
 - Binary Search Tree
   - Breadth First Search (BFS)
@@ -15,6 +19,8 @@ A list of common data structures, algorithms, and resources for Front-end Engine
     - Inorder (left, root, right)
     - Postorder (left, right, root)
 - AVL Tree
+- Graphs
+  - Dijkstra's Algorithm
 
 ## Sorts
 
@@ -30,9 +36,12 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Reverse Integer
 - Palindrome String
 - Anagram String
+- Is Prime
 - Chunk Array
 - Fibonacci Sequence (with memoization)
 - Spiral Matrix
+- Number Pairs
+- Product Without Self
 - Connected Cells Graph
 
 ## Common Considerations
@@ -67,6 +76,8 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - [Algorithms in Motion](https://www.manning.com/livevideo/algorithms-in-motion)
 
 - [Beau Teaches Javascript](https://medium.freecodecamp.org/my-giant-javascript-basics-course-is-now-live-on-youtube-and-its-100-free-9020a21bbc27) [freeCodeCamp Quick Course](https://www.youtube.com/watch?v=t2CEgPsws3U)
+
+- [CS Bootcamp](https://www.udemy.com/js-algorithms-and-data-structures-masterclass/learn/v4/overview)
 
 ### Reading Resources
 
