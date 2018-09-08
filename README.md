@@ -30,6 +30,11 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Merge Sort
 - Quick Sort
 
+## Patterns
+
+- Singleton Design Pattern
+- Factory Design Pattern
+
 ## Problems
 
 - Reverse String
