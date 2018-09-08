@@ -66,7 +66,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 - [Algorithms in Motion](https://www.manning.com/livevideo/algorithms-in-motion)
 
-- [Beau Teaches Javascript](https://medium.freecodecamp.org/my-giant-javascript-basics-course-is-now-live-on-youtube-and-its-100-free-9020a21bbc27)
+- [Beau Teaches Javascript](https://medium.freecodecamp.org/my-giant-javascript-basics-course-is-now-live-on-youtube-and-its-100-free-9020a21bbc27) [freeCodeCamp Quick Course](https://www.youtube.com/watch?v=t2CEgPsws3U)
 
 ### Reading Resources
 

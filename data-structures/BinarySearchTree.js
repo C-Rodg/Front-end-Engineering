@@ -37,6 +37,83 @@ class Node {
 
 		return null;
 	}
+
+	remove(data) {
+		const removeNode = (node, data) => {
+			// No tree passed in
+			if (!node) {
+				return null;
+			}
+			// Found the node
+			if (data === node.data) {
+				// Node has no children
+				if (node.left === null && node.right === null) {
+					return null;
+				}
+
+				// node has no left child
+				if (node.left === null) {
+					return node.right;
+				}
+
+				// node has no right child
+				if (node.right === null) {
+					return node.left;
+				}
+
+				// node has two children
+				// get right nodes most left subnode
+				let tempNode = node.right;
+				while (tempNode.left !== null) {
+					tempNode = tempNode.left;
+				}
+				node.data = tempNode.data;
+				node.right = removeNode(node.right, tempNode.data);
+				return node;
+			} else if (data < node.data) {
+				node.left = removeNode(node.left, data);
+				return node;
+			} else {
+				node.right = removeNode(node.right, data);
+				return node;
+			}
+		};
+		this.root = removeNode(this.root, data);
+	}
+
+	// Determine if balanced
+	isBalanced() {
+		return this.findMinHeight() >= this.findMaxHeight() - 1;
+	}
+
+	// Get Minimum height of tree
+	findMinHeight(node = this.root) {
+		if (node === null) {
+			return -1;
+		}
+		let left = this.findMinHeight(node.left);
+		let right = this.findMinHeight(node.right);
+		if (left < right) {
+			return left + 1;
+		} else {
+			return right + 1;
+		}
+	}
+
+	// Get maximum height of tree
+	findMaxHeight(node = this.root) {
+		if (node === null) {
+			return -1;
+		}
+
+		let left = this.findMaxHeight(node.left);
+		let right = this.findMaxHeight(node.right);
+		if (left > right) {
+			return left + 1;
+		} else {
+			return right + 1;
+		}
+	}
 }
 // ---------------------------------- //
 // BST class with the ability to serial and deserialize
