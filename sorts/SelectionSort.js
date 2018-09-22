@@ -1,6 +1,6 @@
 // Runtime: O(n^2)
 
-// Summary - sort the array from the beginning with double loops
+// Summary - sort the array from the beginning with double loops (similar to bubble sort)
 function selectionSort(arr) {
 	for (let i = 0; i < arr.length; i++) {
 		let indexOfMin = i;
