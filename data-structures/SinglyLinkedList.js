@@ -1,11 +1,11 @@
-// Array: reading - O(1); insertion - O(n); deletion - O(n)
-// Lists: reading - O(n); insertion - O(1); deletion - O(1)
+// Array: search/access - O(1); insertion - O(n); deletion - O(n)
+// Linked Lists: search/access - O(n); insertion - O(1); deletion - O(N -- when at end)
 
 // LL's are better at inserts than arrays because
 // doesn't require 'n' amount of slots all next
 // to eachother.
 // Downside is access to elements is slower.
-class LinkedList {
+class SinglyLinkedList {
 	constructor() {
 		this.head = null;
 	}
@@ -172,7 +172,7 @@ function isListCircular(list) {
 }
 
 // ------- LINKED LIST WITH TAIL & LENGTH ----- //
-class LinkedListWithTail {
+class SinglyLinkedListWithTail {
 	constructor() {
 		this.head = null;
 		this.tail = null;
@@ -286,11 +286,43 @@ class LinkedListWithTail {
 			previousNode.next = newNode;
 			newNode.next = tail;
 			this.length += 1;
-			if (previousNode === this.tail) {
-				this.tail = previousNode.next;
-			}
 		}
 
 		return true;
+	}
+
+	removeAt(idx) {
+		if (idx < 0 || !this.head || idx > this.length - 1) {
+			return null;
+		}
+		if (idx === this.length - 1) {
+			return this.removeLast();
+		} else {
+			const prev = this.getAt(idx - 1);
+			const nodeToRemove = prev.next;
+			prev.next = prev.next.next;
+			this.length -= 1;
+			return nodeToRemove;
+		}
+	}
+
+	// Reverse LL in place
+	reverseInPlace() {
+		let node = this.head;
+
+		// Swap head and tail
+		this.head = this.tail;
+		this.tail = node;
+
+		// Get references before and after nodes
+		let prev = null;
+		let next;
+		for (let i = 0; i < this.length; i++) {
+			next = node.next;
+			node.next = prev;
+			prev = node;
+			node = next;
+		}
+		return this;
 	}
 }
