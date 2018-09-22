@@ -29,6 +29,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Insertion Sort
 - Merge Sort
 - Quick Sort
+- Radix Sort
 
 ## Patterns
 
