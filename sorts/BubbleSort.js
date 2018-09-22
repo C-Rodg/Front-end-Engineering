@@ -1,4 +1,4 @@
-// Runtime O(n^2)
+// Runtime O(n^2) : Space O(1)
 // This sort is not recommended for use
 
 // Summary - pushes greatest values to the end of array

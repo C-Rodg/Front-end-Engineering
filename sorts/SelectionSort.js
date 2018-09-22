@@ -1,4 +1,4 @@
-// Runtime: O(n^2)
+// Runtime: O(n^2) : Space O(1)
 
 // Summary - sort the array from the beginning with double loops (similar to bubble sort)
 function selectionSort(arr) {

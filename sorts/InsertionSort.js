@@ -1,4 +1,4 @@
-// Runtime O(n^2)
+// Runtime O(n^2) : Space O(1)
 // works well with nearly sorted arrays
 // this is a destructive sort
 
