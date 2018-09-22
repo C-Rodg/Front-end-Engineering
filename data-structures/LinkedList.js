@@ -179,6 +179,7 @@ class LinkedListWithTail {
 		this.length = 0;
 	}
 
+	// Add value to last position of LL
 	add(val) {
 		const newNode = new Node(val);
 		if (!this.head) {
@@ -191,6 +192,7 @@ class LinkedListWithTail {
 		this.length += 1;
 	}
 
+	// Remove last item of LL
 	removeLast() {
 		if (!this.head) {
 			return null;
@@ -212,5 +214,83 @@ class LinkedListWithTail {
 			this.tail = null;
 		}
 		return current;
+	}
+
+	// Remove head from LL
+	shift() {
+		if (!this.head) {
+			return null;
+		}
+		const oldHead = this.head;
+		this.head = oldHead.next;
+		this.length -= 1;
+		if (this.length === 0) {
+			this.tail = null;
+		}
+		return oldHead;
+	}
+
+	// Add value to front of LL
+	unshift(val) {
+		const newHead = new Node(val);
+		if (!this.head) {
+			this.head = newHead;
+			this.tail = newHead;
+			this.length += 1;
+			return this;
+		}
+		const oldHead = this.head;
+		this.head = newHead;
+		this.head.next = oldHead;
+		this.length += 1;
+		return this;
+	}
+
+	// Get node at index
+	getAt(idx) {
+		// Edge cases
+		if (idx < 0 || !this.head || idx > this.length - 1) {
+			return null;
+		}
+		let counter = 0;
+		let current = this.head;
+		while (counter !== idx) {
+			current = current.next;
+			counter += 1;
+		}
+		return current;
+	}
+
+	// Set data for node at index
+	setAt(idx, data) {
+		const changedNode = this.getAt(idx);
+		if (!changedNode) {
+			return false;
+		}
+		changedNode.data = data;
+		return true;
+	}
+
+	insertAt(idx, data) {
+		if (idx > this.length || idx < 0) {
+			return false;
+		}
+		if (idx === this.length) {
+			this.add(data);
+		} else if (idx === 0) {
+			this.unshift(data);
+		} else {
+			const previousNode = this.getAt(idx - 1);
+			const tail = previousNode.next;
+			const newNode = new Node(data);
+			previousNode.next = newNode;
+			newNode.next = tail;
+			this.length += 1;
+			if (previousNode === this.tail) {
+				this.tail = previousNode.next;
+			}
+		}
+
+		return true;
 	}
 }
