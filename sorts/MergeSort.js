@@ -1,4 +1,7 @@
 // Runtime: O(n * log n)
+// O(log n) = splitting of array, O(n) comparisons per split
+
+// Space complexity: O(n)
 
 // **RECURSIVE** //
 

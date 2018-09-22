@@ -1,5 +1,5 @@
 // Runtime O(n^2) : Space O(1)
-// works well with nearly sorted arrays
+// works well with nearly sorted arrays - like updating an array over time
 // this is a destructive sort
 
 // Summary - sort from the beginning of array
