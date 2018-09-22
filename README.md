@@ -59,7 +59,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Can there be duplicates?
 - Is the list already sorted?
 
-## Runtimes - Big O Notation
+## Runtimes & Space Complexity - Big O Notation
 
 - Constant Time O(1): no matter how many elements, will always take the same time.
 - Logarithmic Time O(log n): occurs when doubling number of elements doesn't double the amount of work. Most searches of sorted data are logarithmic.
@@ -67,6 +67,10 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Quasilinear Time O(n \* log n): divide and conquer, but must iterate through n. Most sorts are quasilinear.
 - Quadratic Time O(n^2): every element has to be compared to every other element
 - Exponential Time O(2^n): for every one more element, processing power required doubles.
+
+**Space Complexity** measures the amount of space needed to perform. Most primitives (numbers, bools, etc.) are O(1). Strings, arrays, and objects are O(n.length) because a string that is length of n, will take up twice as much memory for a string length of 2n.
+
+**Logarithms**: log2^value = exponent || 2^exponent = value. How many times you can divide a number by 2 before it reaches 1.
 
 ## Notes
 
@@ -95,6 +99,8 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - [Cracking the Coding Interview](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/)
 
 - [The Algorithm Design Manual](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.471.4772&rep=rep1&type=pdf)
+
+- [Nicholas C. Zakas - Human Who Codes](https://humanwhocodes.com/blog/tag/computer-science/)
 
 ### Contributors
 

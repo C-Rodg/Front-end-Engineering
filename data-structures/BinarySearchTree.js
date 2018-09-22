@@ -89,7 +89,7 @@ class Node {
 	// Get Minimum height of tree
 	findMinHeight(node = this.root) {
 		if (node === null) {
-			return -1;
+			return 0; // -1?
 		}
 		let left = this.findMinHeight(node.left);
 		let right = this.findMinHeight(node.right);
@@ -103,7 +103,7 @@ class Node {
 	// Get maximum height of tree
 	findMaxHeight(node = this.root) {
 		if (node === null) {
-			return -1;
+			return 0; // -1?
 		}
 
 		let left = this.findMaxHeight(node.left);
