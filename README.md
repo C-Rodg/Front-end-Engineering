@@ -52,8 +52,8 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 ## Common Considerations
 
-- Time complexity (Big O)
-- Space complexity
+- Time complexity (Big O) - important?
+- Space complexity - important?
 - What is the expected size of this?
 - Can I destroy the data structure?
 - Can there be negative numbers?
@@ -93,6 +93,8 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 - [Geeks for Geeks](https://www.geeksforgeeks.org/)
 
+  - [especially this](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
+
 - [LeetCode](https://leetcode.com/)
 
 - [Coding University](https://github.com/jwasham/coding-interview-university)
@@ -102,6 +104,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - [The Algorithm Design Manual](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.471.4772&rep=rep1&type=pdf)
 
 - [Nicholas C. Zakas - Human Who Codes](https://humanwhocodes.com/blog/tag/computer-science/)
+- [Learneroo Algorithms](https://www.learneroo.com/subjects/8)
 
 ### Contributors
 
