@@ -16,6 +16,7 @@
 
 // Breadth-First Search (BFS)
 // * Breadth Back Queue (bbq)
+// - Very wide trees will require lots of memory
 // - Takes O(V+E) time (vertices/edges)
 // -- Anytime you hear 'width'..
 // -- Solves is there a path from Node A -> Node B for unweighted
@@ -23,6 +24,7 @@
 
 // Depth-First Search (DFS)
 // * Depth Front Stack
+// - Very tall trees will require lots of memory
 // TYPES of DFS: 1 -> 2 / 3 -> 4 /5 (of 2)
 // (a) Inorder (Left, Root, Right) : 4 2 5 1 3
 // (b) Preorder (Root, Left, Right) : 1 2 4 5 3

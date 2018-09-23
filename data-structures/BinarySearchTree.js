@@ -1,7 +1,9 @@
-// Searches run in O(log n) time
+// Insertions and Searches run in O(log n) time
 // Downsides- no random access, tree can get unbalanced
 
-// Clarification question - is it a binary tree or binary search tree?
+// Clarification question -
+// is it a binary tree (2 children, no order) or
+// a binary search tree (2 children, sorted)?
 
 // Perfect Tree formula:
 // height = log base 2 (node count +1)  ===  2 ^ h = nodeCount + 1
