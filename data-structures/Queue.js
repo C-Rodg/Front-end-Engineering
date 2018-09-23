@@ -77,3 +77,36 @@ class QueueWithStacks {
 		return itemToReturn;
 	}
 }
+
+class QueueOptimized {
+	constructor() {
+		this.first = null;
+		this.last = null;
+		this.size = 0;
+	}
+
+	enqueue(data) {
+		const newNode = new Node(data);
+		if (!this.first) {
+			this.first = newNode;
+			this.last = newNode;
+		} else {
+			const oldLast = this.last;
+			oldLast.next = newNode;
+			this.last = newNode;
+		}
+
+		return ++this.size;
+	}
+
+	dequeue() {
+		if (!this.first) {
+			return null;
+		}
+
+		const itemToRemove = this.first;
+		this.first = this.first.next;
+		this.size -= 1;
+		return itemToRemove;
+	}
+}

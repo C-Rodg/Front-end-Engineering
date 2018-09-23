@@ -20,6 +20,8 @@ class Stack {
 	}
 }
 
+// Insertion/Removal O(1)
+// Searching/Access O(n)
 class StackOptimized {
 	// Uses a linked list and adds/removes from start
 	// for O(1) time
