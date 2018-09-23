@@ -78,6 +78,8 @@ class QueueWithStacks {
 	}
 }
 
+// Insertion / Removal O(1)
+// Search / Access O(n)
 class QueueOptimized {
 	constructor() {
 		this.first = null;
@@ -105,6 +107,10 @@ class QueueOptimized {
 		}
 
 		const itemToRemove = this.first;
+		// Handle length = 1
+		if (this.first === this.last) {
+			this.last = null;
+		}
 		this.first = this.first.next;
 		this.size -= 1;
 		return itemToRemove;

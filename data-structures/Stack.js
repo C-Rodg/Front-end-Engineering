@@ -50,6 +50,7 @@ class StackOptimized {
 		}
 
 		const itemToRemove = this.first;
+		// Handle length = 1
 		if (this.first === this.last) {
 			this.last = null;
 		}
