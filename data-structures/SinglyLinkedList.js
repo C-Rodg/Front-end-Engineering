@@ -5,6 +5,9 @@
 // doesn't require 'n' amount of slots all next
 // to eachother.
 // Downside is access to elements is slower.
+
+// TIP: Always write and leverage the getAt(index) method first
+
 class SinglyLinkedList {
 	constructor() {
 		this.head = null;
