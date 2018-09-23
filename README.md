@@ -104,7 +104,12 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - [The Algorithm Design Manual](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.471.4772&rep=rep1&type=pdf)
 
 - [Nicholas C. Zakas - Human Who Codes](https://humanwhocodes.com/blog/tag/computer-science/)
+
 - [Learneroo Algorithms](https://www.learneroo.com/subjects/8)
+
+- [Mastering Programming Interview Questions](https://courses.csail.mit.edu/iap/interview/materials.php)
+
+- [Coderust 3.0](https://www.educative.io/collection/5642554087309312/5679846214598656?authorName=Coderust)
 
 ### Contributors
 

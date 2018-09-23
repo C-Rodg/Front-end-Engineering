@@ -3,6 +3,9 @@
 
 // Clarification question - is it a binary tree or binary search tree?
 
+// Perfect Tree formula:
+// height = log base 2 (node count +1)  ===  2 ^ h = nodeCount + 1
+
 // Create a node class used to implement a BST
 class Node {
 	constructor(data) {
