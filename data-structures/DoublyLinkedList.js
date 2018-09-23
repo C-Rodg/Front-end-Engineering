@@ -1,3 +1,6 @@
+// Insertion - O(1), Removal - O(1), Searching - O(n), Access - O(n)
+// Removal is quicker than single linked lists because it can easily remove from end
+
 // More flexible than Singly Linked List
 // Uses more memory for 'prev' pointer though
 
