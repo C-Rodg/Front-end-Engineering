@@ -1,9 +1,9 @@
-// Array: search/access - O(1); insertion - O(n); deletion - O(n)
 // Linked Lists: search/access - O(n); insertion - O(1); deletion - O(N -- when at end)
+// Array & Dyanmic Arrays: search/access - O(1); insertion - O(n); deletion - O(n); append O(1)
 
 // LL's are better at inserts than arrays because
 // doesn't require 'n' amount of slots all next
-// to eachother.
+// to eachother and no 'shifting' required.
 // Downside is access to elements is slower.
 
 // TIP: Always write and leverage the getAt(index) method first

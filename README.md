@@ -55,7 +55,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Time complexity (Big O) - important?
 - Space complexity - important?
 - What is the expected size of this?
-- Can I destroy the data structure?
+- Can I destroy the data structure - in-place (save space) vs. out-of-place (no side effects)?
 - Can there be negative numbers?
 - Can there be duplicates?
 - Is the list already sorted?
