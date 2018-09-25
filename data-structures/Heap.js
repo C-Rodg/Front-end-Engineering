@@ -1,3 +1,7 @@
+// Runtime:
+// Insertion / Removal: O(log n) [even worse case because compact!]
+// Search is O(n)
+
 // Heap
 // Similar to a BST, but instead of guaranteeing order
 // from left to right, it guarantees it from top to bottom
@@ -8,7 +12,7 @@
 // NOTE: if 19 & 36 are at same level, 36 could have a child higher than 19 (say 25) and it would still be valid.  19's children must be lower than it though
 // meaning CHILD is smaller than PARENT (doesn't have to be parent's sibling)
 
-// Used implement priority queues
+// Used implement PRIORITY QUEUES
 // Commonly used for graph traversal algorithms
 
 // Max Heap - higher numbers on top
@@ -21,6 +25,8 @@
 // Compact Array Structure:
 // index 1 = root, index 2 = left root node, index 3 = right root node
 // 4 left left node, 5 left right node, 6 right left node, 7 right right node
+
+// Advantage over BST is that Heaps are compact!
 
 class MinHeap {
 	constructor() {
@@ -243,5 +249,91 @@ class MaxBinaryHeap {
 		}
 
 		return max;
+	}
+}
+
+//  Priority Queue
+// using min as an example, but can be max too
+
+class PriorityNode {
+	constructor(data, priority) {
+		this.data = data;
+		this.priority = priority;
+	}
+}
+
+class PriorityQueue {
+	// lower numbers = higher priority here
+	constructor() {
+		this.data = [];
+	}
+
+	enqueue(val, priority) {
+		const insertedNode = new PriorityNode(val, priority);
+		this.data.push(insertedNode);
+
+		let idx = this.data.length - 1;
+
+		while (idx > 0) {
+			let parentIdx = Math.floor((idx - 1) / 2);
+			let parent = this.data[parentIdx];
+			if (insertedNode.priority >= parent.priority) {
+				break;
+			}
+			this.data[parentIdx] = insertedNode;
+			this.data[idx] = parent;
+			idx = parentIdx;
+		}
+	}
+
+	dequeue() {
+		// Remove top, and move last item to 0 index
+		const min = this.data[0];
+		const end = this.data.pop();
+		this.data[0] = end;
+		// Edge case
+		if (this.data.length === 1) {
+			return this.data.pop();
+		}
+
+		let idx = 0;
+		const length = this.data.length;
+		const item = this.data[0];
+
+		while (true) {
+			const leftChildIdx = 2 * idx + 1;
+			const rightChildIdx = 2 * idx + 2;
+			let leftChild, rightChild;
+			let swap = null;
+
+			if (leftChildIdx < length) {
+				leftChild = this.data[leftChildIdx];
+
+				if (leftChild.priority < item.priority) {
+					swap = leftChildIdx;
+				}
+			}
+
+			if (rightChildIdx < length) {
+				rightChild = this.data[rightChildIdx];
+
+				if (
+					(swap === null && rightChild.priority < item.priority) ||
+					(swap !== null && rightChild.priority < leftChild.priority)
+				) {
+					swap = rightChildIdx;
+				}
+			}
+
+			if (swap === null) {
+				break;
+			}
+
+			this.data[idx] = this.data[swap];
+			this.data[swap] = item;
+			idx = swap;
+		}
+
+		return min;
 	}
 }
