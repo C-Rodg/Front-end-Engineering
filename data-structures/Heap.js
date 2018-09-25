@@ -4,6 +4,12 @@
 // - Best for finding min or max values
 // - Often stored in a compact array
 // - order doesn't matter on same level
+// - values stored in left child first, and are always compact (2 children before next level)
+// NOTE: if 19 & 36 are at same level, 36 could have a child higher than 19 (say 25) and it would still be valid.  19's children must be lower than it though
+// meaning CHILD is smaller than PARENT (doesn't have to be parent's sibling)
+
+// Used implement priority queues
+// Commonly used for graph traversal algorithms
 
 // Max Heap - higher numbers on top
 // Min Heap - lower numbers on top
@@ -153,5 +159,89 @@ class MaxHeap {
 			return null;
 		}
 		return greatestValue;
+	}
+}
+
+class MaxBinaryHeap {
+	constructor() {
+		this.data = [];
+		// If not using [0] = null then use these formulas:
+		// i's parent = Math.floor(i-1 /2)
+		// i's left child = 2i + 1
+		// i's right child = 2i + 2
+	}
+
+	// Insert at end and bubble up
+	insert(data) {
+		// 1.) Add to data array
+		// 2.) Compare to parent and swap if needed
+		// 3.) Compare to next parent and swap if needed
+		this.data.push(data);
+
+		let idx = this.data.length - 1;
+		let parentIdx = Math.floor((idx - 1) / 2);
+		while (this.data[idx] > this.data[parentIdx] && idx > 0) {
+			// Swap
+			[this.data[idx], this.data[parentIdx]] = [
+				this.data[parentIdx],
+				this.data[idx]
+			];
+			idx = parentIdx;
+			parentIdx = Math.floor((idx - 1) / 2);
+		}
+	}
+
+	// Extract max
+	extractMax() {
+		// 1.) Remove index 0 and replace with item at end [arr.length -1]
+		// 2.) Compare new root to children and swap with largest if needed
+		// 3.) repeat...
+
+		// Swap and save off variables
+		const max = this.data[0];
+		const current = this.data.pop();
+		this.data[0] = current;
+
+		// Edge case of only one item
+		if (this.data.length === 1) {
+			return this.data.pop();
+		}
+
+		// Sink down to proper position
+		let idx = 0;
+		const length = this.data.length;
+		while (true) {
+			const element = this.data[idx];
+			const leftChildIdx = 2 * idx + 1;
+			const rightChildIdx = 2 * idx + 2;
+			let leftChild, rightChild;
+			let swap = null;
+
+			if (leftChildIdx < length) {
+				leftChild = this.data[leftChildIdx];
+				if (leftChild > element) {
+					swap = leftChildIdx;
+				}
+			}
+
+			if (rightChildIdx < length) {
+				rightChild = this.data[rightChildIdx];
+				if (rightChild > element && rightChild > leftChild) {
+					swap = rightChildIdx;
+				}
+			}
+
+			if (swap === null) {
+				break;
+			}
+
+			// Swap values
+			this.data[idx] = this.data[swap];
+			this.data[swap] = element;
+
+			idx = swap;
+		}
+
+		return max;
 	}
 }
