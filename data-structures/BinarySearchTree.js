@@ -284,3 +284,46 @@ function binarySearchRecursive(arr, left, right, item) {
 }
 const list = [1, 3, 5, 12, 24, 25, 26, 32];
 const result = binarySearchRecursive(list, 0, list.length - 1, 26);
+
+// Easy way to traverse a BST
+class EasyBST {
+	constructor() {
+		this.root = null;
+	}
+
+	easyDFSPreorderList() {
+		// root, left, right
+		const data = [];
+		function traverse(node) {
+			data.push(node.data);
+			node.left && traverse(node.left);
+			node.right && traverse(node.right);
+		}
+		traverse(this.root);
+		return data;
+	}
+
+	easyDFSInorderList() {
+		// left, root, right
+		const data = [];
+		function traverse(node) {
+			node.left && traverse(node.left);
+			data.push(node.data);
+			node.right && traverse(node.right);
+		}
+		traverse(this.root);
+		return data;
+	}
+
+	easyDFSPostOrderList() {
+		// left, right, root
+		const data = [];
+		function traverse(node) {
+			node.left && traverse(node.left);
+			node.right && traverse(node.right);
+			data.push(node.data);
+		}
+		traverse(this.root);
+		return data;
+	}
+}
