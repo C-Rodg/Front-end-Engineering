@@ -47,3 +47,36 @@
 // Remove Edge  O(E)        O(1)
 // Query        O(V+E)      O(1)
 // Storage      O(V+E)      O(V^2)
+
+class Graph {
+	constructor() {
+		this.adjacencyList = {};
+	}
+
+	// Add a node
+	addVertex(vertex) {
+		if (!this.adjacencyList[vertex]) {
+			this.adjacencyList[vertex] = [];
+		}
+	}
+
+	// Add connections
+	addEdge(v1, v2) {
+		this.adjacencyList[v1].push(v2);
+		this.adjacencyList[v2].push(v1);
+	}
+
+	// Remove edge from each node
+	removeEdge(v1, v2) {
+		this.adjacencyList[v1] = this.adjacencyList[v1].filter(v => v !== v2);
+		this.adjacencyList[v2] = this.adjacencyList[v2].filter(v => v !== v1);
+	}
+
+	// Remove a vertex - must remove all connected edges
+	removeVertex(vertex) {
+		this.adjacencyList[vertex].forEach(connectedVertex => {
+			this.removeEdge(vertex, connectedVertex);
+		});
+		delete this.adjacencyList[vertex];
+	}
+}
