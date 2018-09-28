@@ -79,4 +79,26 @@ class Graph {
 		});
 		delete this.adjacencyList[vertex];
 	}
+
+	// Recursive depth-first search
+	dfsRecursive(startVertex) {
+		const result = [];
+		const visited = {};
+
+		// could also make this an IIFE
+		const traverse = (vertex) => {
+			if (!vertex) {
+				return;
+			}
+			visited[vertex] = true;
+			result.push(vertex);
+			this.adjacencyList[vertex].forEach((neighbor) {
+				if (!visited[neighbor]) {
+					return traverse(neighbor);
+				}
+			})
+		}
+		traverse(startVertex);
+		return result;
+	}
 }
