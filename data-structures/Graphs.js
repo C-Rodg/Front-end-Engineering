@@ -86,19 +86,60 @@ class Graph {
 		const visited = {};
 
 		// could also make this an IIFE
-		const traverse = (vertex) => {
+		const traverse = vertex => {
 			if (!vertex) {
 				return;
 			}
 			visited[vertex] = true;
 			result.push(vertex);
-			this.adjacencyList[vertex].forEach((neighbor) {
+			this.adjacencyList[vertex].forEach(neighbor => {
 				if (!visited[neighbor]) {
 					return traverse(neighbor);
 				}
-			})
-		}
+			});
+		};
 		traverse(startVertex);
 		return result;
+	}
+
+	// DFS Iterative - uses a stack
+	dfsIterative(startVertex) {
+		const nodes = [startVertex];
+		const visited = {};
+		const results = [];
+		while (nodes.length > 0) {
+			let current = nodes.pop();
+			visited[current] = true;
+			results.push(current);
+			this.adjacencyList[current].forEach(neighbor => {
+				if (!visited[neighbor]) {
+					visited[neighbor] = true;
+					nodes.push(neighbor);
+				}
+			});
+		}
+		return results;
+	}
+
+	// BFS Recursive - uses a queue
+	bfsIterative(startVertex) {
+		const visited = {};
+		const results = [];
+		const nodes = [startVertex];
+		let current;
+		visited[startVertex] = true;
+		while (nodes.length > 0) {
+			current = nodes.shift();
+
+			results.push(current);
+			this.adjacencyList[current].forEach(neighbor => {
+				if (!visited[neighbor]) {
+					visited[neighbor] = true;
+					nodes.push(neighbor);
+				}
+			});
+		}
+
+		return results;
 	}
 }
