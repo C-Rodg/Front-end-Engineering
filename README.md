@@ -111,6 +111,8 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 - [Coderust 3.0](https://www.educative.io/collection/5642554087309312/5679846214598656?authorName=Coderust)
 
+- [Coderust Alternative](https://github.com/kevinfiol/coderust-free)
+
 ### Contributors
 
 Curtis Rodgers (me) : https://curtisrodgers.com
