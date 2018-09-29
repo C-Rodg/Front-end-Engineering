@@ -113,3 +113,97 @@ function dijkstra(graph) {
 
 	return results;
 }
+
+// -------- IMPLEMENTATION #2 ---------- //
+// Use a priority queue (binary heap)!
+
+// PSUEDOCODE:  3 objects - PriorityQueue, 'previous', 'distances'
+// 1.) Create the graph structure
+//  using addVertex(v) and addEdge(v1, v2, weight)
+// 2.) Function should accept a start and end vertex
+// 3.) Create object, 'distances', with each vertex
+// in Adjacency List as a key and the value initialized
+// to infinity - except start which = 0.
+// 4.) After adding to 'distances', add each vertex with
+// a priority of Infinity to Priority Queue, except start which = 0
+// 5.) Create object, 'previous' and set each key to be every vertex
+// with an initial value of null
+// 6.) Loop as long as there are items in the Priority Queue
+//	- dequeue a vertex from priority queue (get smallest distance)
+//	- if vertex = end vertex, we are done!
+// 	- otherwise loop through each value in the adjacency list at that vertex
+// 		- calculate distance to that vertex from start
+// 		- if distance is less than currently stored in our 'distances' object
+//			- update the "distances" object with new lower distance
+//			- update the "previous" object to contain that vertex
+//			- enqueue the vertex with the total distance from the start node
+
+// The 'previous' hashmap gives the shortest distance from start to any node actually
+
+class WeightedGraph {
+	constructor() {
+		this.adjacencyList = {};
+	}
+
+	addVertex(vertex) {
+		if (!this.adjacencyList[vertex]) {
+			this.adjacencyList[vertex] = [];
+		}
+	}
+
+	addEdge(vertex1, vertex2, weight) {
+		this.adjacencyList[vertex1].push({ node: vertex2, weight });
+		this.adjacencyList[vertex2].push({ node: vertex1, weight });
+	}
+
+	shortestPath(start, finish) {
+		const nodes = new PriorityQueue();
+		const distances = {};
+		const previous = {};
+
+		// Build tracking objects (steps 3-5)
+		for (let vertex in this.adjacencyList) {
+			if (vertex === start) {
+				distances[vertex] = 0;
+				nodes.enqueue(vertex, 0);
+			} else {
+				distances[vertex] = Infinity;
+				nodes.enqueue(vertex, Infinity);
+			}
+
+			previous[vertex] = null;
+		}
+
+		// Loop through nodes (step 6)
+		let smallest;
+		const path = [];
+		while (nodes.length > 0) {
+			// Get the smallest value
+			smallest = nodes.dequeue().val;
+			if (vertex === finish) {
+				// Done! Build path to return
+				while (previous[smallest]) {
+					path.push(smallest);
+					smallest = previous[smallest];
+				}
+				break;
+			}
+
+			if (smallest || distances[smallest] !== Infinity) {
+				for (let neighbor in this.adjacencyList[smallest]) {
+					let currentNeighbor = this.adjacencyList[smallest][neighbor];
+					// Calculate new distance to neighboring node
+					let currentDistance = distances[smallest] + currentNeighbor.weight;
+					if (currentDistance < distances[currentNeighbor.node]) {
+						// Since new distance is smaller, update previous and distances objects
+						distances[currentNeighbor.node] = currentDistance;
+						previous[currentNeighbor.node] = smallest;
+						nodes.enqueue(currentNeighbor.node, currentDistance);
+					}
+				}
+			}
+		}
+		// While loop breaks before start value is added, so be sure to add!
+		return path.concat(smallest);
+	}
+}

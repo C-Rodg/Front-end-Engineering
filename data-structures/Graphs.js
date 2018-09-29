@@ -4,6 +4,7 @@
 // Vertex - a node
 // Edge - connection between nodes
 // Weighted / Unweighted - edges assigned value vs. edges all equal
+// *** For weighted graphs see Dijkstras.js
 // Directed / Undirected - two way connections vs. only one way connections
 
 // COMMON STORAGE STRUCTURES:
