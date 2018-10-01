@@ -20,6 +20,8 @@ A list of common data structures, algorithms, and resources for Front-end Engine
     - Postorder (left, right, root)
 - AVL Tree
 - Graphs
+  - Adjacency Matrix
+  - Adjacency List
   - Dijkstra's Algorithm
 
 ## Sorts

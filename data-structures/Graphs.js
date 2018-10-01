@@ -144,3 +144,54 @@ class Graph {
 		return results;
 	}
 }
+
+// My attempt at an adjacency matrix graph
+class AMGraph {
+	constructor(numVertexes) {
+		this.adjMatrix = new Array(numVertexes).fill(
+			new Array(numVertexes).fill(-1)
+		);
+		this.numVertexes = numVertexes;
+		this.vertices = {};
+		this.verticesList = new Array(numVertexes).fill(0);
+	}
+
+	setVertex(vertex, id) {
+		if (0 < vertex && vertex < this.numVertexes) {
+			this.vertices[id] = vertex;
+			this.verticesList[vertex] = id;
+		}
+	}
+
+	setEdge(from, to, cost = 0) {
+		const fromVtx = this.vertices[from];
+		const toVtx = this.vertices[to];
+		this.adjMatrix[fromVtx][toVtx] = cost;
+		// line below only used for undirected graphs
+		this.adjMatrix[toVtx][fromVtx] = cost;
+	}
+
+	getVertex() {
+		return this.verticesList;
+	}
+
+	getEdges() {
+		const edges = [];
+		for (let i = 0; i < this.numVertexes; i++) {
+			for (let j = 0; j < this.numVertexes; j++) {
+				if (this.adjMatrix[i][j] !== -1) {
+					edges.push([
+						this.verticesList[i],
+						this.verticesList[j],
+						this.adjMatrix[i][j]
+					]);
+				}
+			}
+		}
+		return edges;
+	}
+
+	getMatrix() {
+		return this.adjMatrix;
+	}
+}
