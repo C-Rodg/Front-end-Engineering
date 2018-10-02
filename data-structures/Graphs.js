@@ -7,6 +7,9 @@
 // *** For weighted graphs see Dijkstras.js
 // Directed / Undirected - two way connections vs. only one way connections
 
+// Cardinality: Number of nodes = |7| (looks like to the absolute)
+// Degree: Number of nodes connected to node = deg(v1) = 3
+
 // COMMON STORAGE STRUCTURES:
 
 // Adjacency Matrix:
