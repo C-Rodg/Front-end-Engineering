@@ -75,6 +75,46 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 **Logarithms**: log2^value = exponent || 2^exponent = value. How many times you can divide a number by 2 before it reaches 1.
 
+## Useful Formulas
+
+- **Compact Array Formula:** (typically used with binary heaps)
+
+  - "i"'s parent = Math.floor((i-1) / 2)
+  - "i"'s left child = 2i + 1
+  - "i"'s right child = 2i + 2
+
+- **Normalize Array Shifts:** (useful for array rotations)
+  - (current index + amount shifted left or right (+/-)) % array.length = new index
+  - if new index is less than 0, then add array.length
+
+## The Interview
+
+1. Clarify the problem
+
+- Ask for an example
+- State assumptions
+- Ask questions (use common consideration list above)
+
+1. Design a solution
+
+- Iterate on solutions
+- Discuss tradeoffs with time & space complexity
+
+1. Write code
+1. Review
+
+- Always **TEST** your code! Test normal cases first, and edge cases later.
+
+## System Design Interviews
+
+- **Process:**
+  - Break it down
+    - Always clarify! _What are features? Sort by time? Store all content? What platform? Work offline?.._
+  - Analyze tradeoffs
+  - Navigate levels of abstraction
+
+A type of system design interview might be something like 'how would you build an rss reader?'. These types of interviews are more about diagrams and pseudocode than real code.
+
 ## Notes
 
 - Call stack can handle ~10,000 frames before stack overflow
