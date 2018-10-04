@@ -84,8 +84,15 @@ A list of common data structures, algorithms, and resources for Front-end Engine
   - "i"'s right child = 2i + 2
 
 - **Normalize Array Shifts:** (useful for array rotations)
+
   - (current index + amount shifted left or right (+/-)) % array.length = new index
   - if new index is less than 0, then add array.length
+
+- **Max Sub Array:** (Kandane's Algorithm)
+  1. current, global = arr[0]
+  1. for 1...arr.length - 1
+  1. current = Math.max(arr[i], current + arr[i])
+  1. current > global ? then global = current
 
 ## The Interview
 
