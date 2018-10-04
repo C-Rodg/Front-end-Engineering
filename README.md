@@ -98,9 +98,9 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 1. Clarify the problem
 
-- Ask for an example
-- State assumptions
-- Ask questions (use common consideration list above)
+   - Ask for an example
+   - State assumptions
+   - Ask questions (use common consideration list above)
 
 1. Design a solution
 
