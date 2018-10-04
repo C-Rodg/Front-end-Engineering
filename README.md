@@ -89,10 +89,10 @@ A list of common data structures, algorithms, and resources for Front-end Engine
   - if new index is less than 0, then add array.length
 
 - **Max Sub Array:** (Kandane's Algorithm)
-  1. current, global = arr[0]
-  1. for 1...arr.length - 1
-  1. current = Math.max(arr[i], current + arr[i])
-  1. current > global ? then global = current
+  - set current, global = arr[0]
+  - loop: for 1...arr.length - 1
+  - current = Math.max(arr[i], current + arr[i])
+  - current > global ? then global = current
 
 ## The Interview
 
@@ -104,13 +104,13 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 1. Design a solution
 
-- Iterate on solutions
-- Discuss tradeoffs with time & space complexity
+   - Iterate on solutions
+   - Discuss tradeoffs with time & space complexity
 
 1. Write code
 1. Review
 
-- Always **TEST** your code! Test normal cases first, and edge cases later.
+   - Always **TEST** your code! Test normal cases first, and edge cases later.
 
 ## System Design Interviews
 
