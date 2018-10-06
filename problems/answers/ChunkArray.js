@@ -1,6 +1,3 @@
-// Given an array and chunk size
-// divide the array into subarrays to size
-
 function chunkWhile(arr, size) {
 	const chunked = [];
 	let index = 0;

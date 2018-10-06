@@ -1,6 +1,4 @@
 // Runtime is O(n)
-
-// Return whether the number is prime
 function isPrime(n) {
 	// Base Case #1
 	if (n === 1) {

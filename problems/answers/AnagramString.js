@@ -1,6 +1,3 @@
-// Check if two strings are anagrams of eachother
-// An anagram uses the same amount of characters
-
 function anagramCharMap(stringA, stringB) {
 	const mapA = getCharMap(stringA);
 	const mapB = getCharMap(stringB);
@@ -27,6 +24,7 @@ function getCharMap(str) {
 }
 
 // ------- SOLUTION TWO --------- //
+// Quick and dirty
 function anagramSort(stringA, stringB) {
 	return cleanString(stringA) === cleanString(stringB);
 }

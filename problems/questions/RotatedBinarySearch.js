@@ -1,3 +1,5 @@
+// Difficulty: Medium
+
 // Search a given number in a sorted
 // array that has been rotated by some arbitrary number.
 
@@ -6,3 +8,7 @@
 
 // Runtime: O(log n)
 // Memory: O(log n) or O(1) if using iterative
+
+function rotatedBSTSearch(arr, key) {
+	// TODO:
+}

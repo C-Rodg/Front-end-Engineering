@@ -1,6 +1,3 @@
-// Given a string, return a new string
-// with reversed order of characters
-
 function reverseShort(str) {
 	return str
 		.split('')

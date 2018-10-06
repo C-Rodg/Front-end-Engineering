@@ -1,7 +1,4 @@
-// Given a list of numbers and a number k, return whether
-// any two numbers from the list add up to k
-
-// O (n log n)
+// Runtime: O (n log n)
 function numberPairs(arr, k) {
 	// Sort using merge or heap sort
 	const sortedArray = mergeSort(arr);
@@ -22,7 +19,7 @@ function numberPairs(arr, k) {
 	return false;
 }
 
-// O(n)
+// Runtime: O(n)
 function numberPairsHash(arr, k) {
 	const pairMap = {};
 	for (let i = 0; i < arr.length; i++) {

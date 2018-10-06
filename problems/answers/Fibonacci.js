@@ -1,6 +1,3 @@
-// Print out the n-th entry of the
-// fibonacci sequence
-
 // Recursive solution
 function fib(n) {
 	if (n < 2) {
