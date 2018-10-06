@@ -89,10 +89,44 @@ A list of common data structures, algorithms, and resources for Front-end Engine
   - if new index is less than 0, then add array.length
 
 - **Max Sub Array:** (Kandane's Algorithm)
+
   - set current, global = arr[0]
   - loop: for 1...arr.length - 1
   - current = Math.max(arr[i], current + arr[i])
   - current > global ? then global = current
+
+- **Triangular Series:**
+  - a series of numbers where each number could be a row in an equilateral triangle (starts with 1 and increases by 1)
+  - Example: 1,2,3,4,5; Sum = 15
+  - Pairs of numbers on each side will always add up to the same value which will be 'n' + 1. i.e. 1 + 5 = 6, 2+ 4 = 6, 3 + 3 = 6
+  - The formula for this would be:
+    - (n^2 + n) / 2 = Sum of integers to 'n'
+  - This formula can be re-written as: (n^2 + n) = 2 \* Sum, which is quadratic
+    -Quadratic formula format: ax^2 + bx + c = 0
+    -Quadratic formula: ( -b +/- sqrt(b^2 - 4ac) ) / 2a
+
+## Problem Solving Patterns
+
+- **Frequency Counters:**
+
+  - build 1 map, then subtract (or build 2)
+  - Examples: strings, anagrams...
+  - `{ a: 2, c: 1: t: 2}`
+
+- **Multiple Pointers:**
+
+  - uses two pointers and moves them in direction toward solution
+  - Examples: Pairs of sorted integers, unique values
+
+- **Sliding Window:**
+
+  - create a window which can either be an array or number from one position to another
+  - Examples: Find max sum of 'n' adjacent indexes (Kandane's Algorithm), find longest set of unique characters
+
+- **Divide & Conquer:**
+
+  - Consistently divide solution down to 1 (logarithm)
+  - Examples: Merge sort, quick sort, binary search
 
 ## The Interview
 
