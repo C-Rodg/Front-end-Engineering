@@ -96,6 +96,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
   - current > global ? then global = current
 
 - **Triangular Series:**
+
   - a series of numbers where each number could be a row in an equilateral triangle (starts with 1 and increases by 1)
   - Example: 1,2,3,4,5; Sum = 15
   - Pairs of numbers on each side will always add up to the same value which will be 'n' + 1. i.e. 1 + 5 = 6, 2+ 4 = 6, 3 + 3 = 6
@@ -104,6 +105,10 @@ A list of common data structures, algorithms, and resources for Front-end Engine
   - This formula can be re-written as: (n^2 + n) = 2 \* Sum, which is quadratic
     -Quadratic formula format: ax^2 + bx + c = 0
     -Quadratic formula: ( -b +/- sqrt(b^2 - 4ac) ) / 2a
+
+- **Sum Formula:**
+  - useful for finding the missing number in a series of 1 to n
+  - Sum of 1 to 'n' === (n \* (n+1)) / 2
 
 ## Problem Solving Patterns
 
