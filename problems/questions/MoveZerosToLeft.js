@@ -9,3 +9,5 @@
 function moveZerosToLeft(arr) {
 	// TODO:
 }
+
+// A similar problem to this would be 'Remove White Spaces' in a string
