@@ -120,7 +120,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 - **Multiple Pointers:**
 
-  - uses two pointers and moves them in direction toward solution
+  - uses two pointers (usually a read and a write pointer) and moves them in direction toward solution
   - Examples: Pairs of sorted integers, unique values
 
 - **Sliding Window:**
