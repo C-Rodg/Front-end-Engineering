@@ -36,14 +36,18 @@ function weave(q1, q2) {
 
 // Implementation with two stacks only
 class QueueWithStacks {
+	// A good question to ask the interview is what needs
+	// to be faster - adding or removing
 	constructor() {
 		this.data = new Stack();
 	}
 
+	// O(1)
 	add(item) {
 		this.data.add(item);
 	}
 
+	// O(n)
 	remove() {
 		const tempStack = new Stack();
 		// Shift all items to temporary stack
@@ -61,6 +65,7 @@ class QueueWithStacks {
 		return itemToRemove;
 	}
 
+	// O (n)
 	peek() {
 		const tempStack = new Stack();
 
@@ -75,6 +80,22 @@ class QueueWithStacks {
 		}
 
 		return itemToReturn;
+	}
+
+	// O(n)
+	slowEnqueue(data) {
+		while (this.s1.length) {
+			this.s2.push(this.s1.pop());
+		}
+		this.s1.push(data);
+		while (this.s2.length) {
+			this.s1.push(this.s2.pop());
+		}
+	}
+
+	// O(1)
+	fastDequeue() {
+		return this.s1.pop();
 	}
 }
 
