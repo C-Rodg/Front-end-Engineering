@@ -107,8 +107,15 @@ A list of common data structures, algorithms, and resources for Front-end Engine
     -Quadratic formula: ( -b +/- sqrt(b^2 - 4ac) ) / 2a
 
 - **Sum Formula:**
+
   - useful for finding the missing number in a series of 1 to n
   - Sum of 1 to 'n' === (n \* (n+1)) / 2
+
+- **Euclidean/Manhattan Distance Formula:**
+  - useful for finding the distance between two points
+  - allows for diagonal distance. If not needed use the 'Manhattan Distance' instead
+  - Euclidean Distance 'd' = sqrt( (x2 - x1)^2 + (y2 - y1)^2 )
+  - Manhattan Distance 'd' = abs(x2-x1) + abs(y2-y1)
 
 ## Problem Solving Patterns
 
