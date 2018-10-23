@@ -1,4 +1,5 @@
 // Difficulty: Medium
+// Topic: Arrays, Rotation
 
 // Given an array of integers, rotate the array by N elements.
 
