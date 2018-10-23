@@ -1,4 +1,5 @@
 // Difficulty: Hard
+// Topic: Arrays, Multiple Pointers
 
 // Given three integer arrays sorted in ascending order,
 // find the smallest number that is common in all three arrays.
@@ -9,6 +10,6 @@
 // Runtime: O(n)
 // Memory: O(1)
 
-function(arrA, arrB, arrC) {
-    // TODO: 
+function smallestCommonNumber(arrA, arrB, arrC) {
+	// TODO:
 }
