@@ -1,4 +1,17 @@
-// Runtime: O (n log n)
+// Solution #1 - Runtime: O(n)
+function numberPairsHash(arr, k) {
+	const pairMap = {};
+	for (let i = 0; i < arr.length; i++) {
+		const pair = k - arr[i];
+		if (pair >= 0 && pairMap[pair] === 1) {
+			return true;
+		}
+		pairMap[arr[i]] = 1;
+	}
+	return false;
+}
+
+// Solution #2 - Runtime: O (n log n)
 function numberPairs(arr, k) {
 	// Sort using merge or heap sort
 	const sortedArray = mergeSort(arr);
@@ -15,19 +28,6 @@ function numberPairs(arr, k) {
 		} else {
 			right -= 1;
 		}
-	}
-	return false;
-}
-
-// Runtime: O(n)
-function numberPairsHash(arr, k) {
-	const pairMap = {};
-	for (let i = 0; i < arr.length; i++) {
-		const pair = k - arr[i];
-		if (pair >= 0 && pairMap[pair] === 1) {
-			return true;
-		}
-		pairMap[arr[i]] = 1;
 	}
 	return false;
 }

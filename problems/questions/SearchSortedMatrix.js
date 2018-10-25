@@ -1,5 +1,5 @@
 // Difficulty: Easy
-// Topic: Matrix
+// Topic: Matrix, Binary Search
 
 // For a matrix where any individual row or column is sorted
 // and a value 'k', find the position of k in the matrix.

@@ -38,19 +38,23 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Singleton Design Pattern
 - Factory Design Pattern
 
-## Problems
+## TODO: Problems
 
-- Reverse String
-- Reverse Integer
-- Palindrome String
-- Anagram String
-- Is Prime
-- Chunk Array
-- Fibonacci Sequence (with memoization)
-- Spiral Matrix
-- Number Pairs
-- Product Without Self
-- Connected Cells Graph
+- All Subsets
+- Coin Changing
+- Compare BST
+- Convert N Tree to BST
+- Delete Zero Sum BST
+- Expression Evaluation
+- Game Scoring
+- Get Kth Biggest BST
+- Inorder Successor BST
+- Levenshtein Distance
+- Missing Number
+- Pythagorean Triplets
+- Serialize Deserialize BST
+- Solve N Queens
+- Sum of Three Values
 
 ## Common Considerations
 
