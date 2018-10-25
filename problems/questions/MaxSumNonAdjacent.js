@@ -1,5 +1,5 @@
 // Difficulty: MEDIUM
-// Topic: Dynamic Programming
+// Topic: Arrays
 
 // Find the maximum sum of a subsequence in
 // an array such that no consecutive elements are
