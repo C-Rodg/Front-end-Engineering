@@ -1,3 +1,6 @@
+// Difficulty: Medium
+// Topic: Strings, Reversals
+
 //Reverse the order of words in a given sentence.
 //Here are a few examples:
 //"Hello World" -> "World Hello"
