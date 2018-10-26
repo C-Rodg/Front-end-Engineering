@@ -4,6 +4,8 @@
 // 4.) For the '1' digits in the binary representation, add the index of the '1' from the set to the set to add
 // 5.) Return the set of sets
 
+// Question #2: To solve, just keep a sum count and if sum === 'k', then add the set
+
 function getAllSubsets(...args) {
 	let numberOfSubsets = Math.pow(2, args.length);
 	const result = [];
