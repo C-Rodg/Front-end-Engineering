@@ -41,12 +41,10 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 ## TODO: Problems
 
 - Coin Changing
-- Compare BST
 - Convert N Tree to BST
 - Delete Zero Sum BST
 - Expression Evaluation
 - Game Scoring
-- Get Kth Biggest BST
 - Inorder Successor BST
 - Levenshtein Distance
 - Missing Number
