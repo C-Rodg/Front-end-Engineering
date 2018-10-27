@@ -40,7 +40,6 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 ## TODO: Problems
 
-- Coin Changing
 - Expression Evaluation
 - Game Scoring
 - Levenshtein Distance
@@ -133,6 +132,13 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
   - Consistently divide solution down to 1 (logarithm)
   - Examples: Merge sort, quick sort, binary search
+
+- **Dynamic Programming:**
+
+  - used when a naive approach will result in exponential (2^n) runtime
+  - problem to be solved must have an _optimal substructure_ and _overlapping subproblems_
+  - uses pre-computed values for solved sub-problems so that we don't have to solve them again
+  - Examples: Fibonacci sequence, Knapsack problem, Levenshtein/Edit Distance
 
 ## The Interview
 
