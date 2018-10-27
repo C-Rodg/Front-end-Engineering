@@ -1,3 +1,6 @@
+// Difficulty: Easy
+// Topic: Postorder DFS, BST
+
 // Given root of a binary tree delete
 // any subtrees whose nodes sum up to zero.
 

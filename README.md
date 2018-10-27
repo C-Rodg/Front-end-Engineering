@@ -41,11 +41,9 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 ## TODO: Problems
 
 - Coin Changing
-- Delete Zero Sum BST
 - Expression Evaluation
 - Game Scoring
 - Levenshtein Distance
-- Missing Number
 - Pythagorean Triplets
 - Serialize Deserialize BST
 
