@@ -19,3 +19,6 @@
 // while loop rows...
 // while loop cols...
 // if valid move add col to stack and increment row
+function solveNQueens(n) {}
+
+function isValidMove(proposedRow, proposedCol, solution) {}
