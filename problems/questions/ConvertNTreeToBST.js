@@ -1,4 +1,5 @@
 // Difficulty: HARD
+// Topic:  Trees, Conversion
 
 // Convert an N-ary tree to Binary tree and
 // then convert this Binary tree back to its
@@ -14,3 +15,7 @@ function convertNTreeToBT(ntree) {
 function convertBTToNTree(root) {
 	// TODO:
 }
+
+// Hint:
+// Add childs on the same level in one direction
+// If node has children, branch and change direction
