@@ -45,7 +45,6 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Game Scoring
 - Levenshtein Distance
 - Pythagorean Triplets
-- Serialize Deserialize BST
 
 ## Common Considerations
 
