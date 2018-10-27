@@ -40,7 +40,6 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 
 ## TODO: Problems
 
-- Expression Evaluation
 - Game Scoring
 - Levenshtein Distance
 - Pythagorean Triplets
