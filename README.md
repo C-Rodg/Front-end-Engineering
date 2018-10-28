@@ -38,9 +38,13 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Singleton Design Pattern
 - Factory Design Pattern
 
-## TODO: Problems
+## Problems (TODO:)
 
-- Game Scoring
+- **Binary Search Trees:**
+
+* **Dynamic Programming:**
+  - GameScoring
+  - CoinChanging
 
 ## Common Considerations
 

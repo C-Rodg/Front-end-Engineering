@@ -29,8 +29,8 @@ function coinWays(denominations, amount) {
 		// solution at index 'i' = solution['i' - denominationAmount]
 	}
 
-	// Return last index
-	return solutions[solutions.length - 1];
+	// Return index for amount solved for
+	return solution[amount];
 }
 
 // Recursive solution

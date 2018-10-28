@@ -9,3 +9,5 @@
 // Runtime: O(n)
 // Memory: O(n) for memoization
 // Memory: O(1) for Dynamic Programming
+
+// Hint: This is a variation of the coin changing problem
