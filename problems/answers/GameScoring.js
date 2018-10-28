@@ -18,7 +18,7 @@ function gameScoring(score) {
 	return solutions[score];
 }
 
-// How this plays out for score = 13
+// How this plays out for score = 13 (using the 'bottom up/tabulation' approach)
 
 // solutions = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];  // length of 14 (score + 1)
 
@@ -50,3 +50,28 @@ function gameScoring(score) {
 // solutions = [1, 1, 2, 2, 4, 4, 6, 6, 9, 9, 12, 12, 16, 16]
 
 // return solutions[score] -> 16
+
+function gameScoringRecursive(scoreValues, idx, score) {
+	// base case #1
+	if (score === 0) {
+		return 1;
+	}
+
+	// guard base case #2
+	if (score < 0) {
+		return 0;
+	}
+
+	// no scores and score is greater than 0
+	if (idx <= 0 && score >= 1) {
+		return 0;
+	}
+
+	return (
+		gameScoringRecursive(scoreValues, idx - 1, score) +
+		gameScoringRecursive(scoreValues, idx, score - scoreValues[idx - 1])
+	);
+}
+
+const scoreValues = [1, 2, 4];
+gameScoringRecursive(scoreValues, scoreValues.length, 13);

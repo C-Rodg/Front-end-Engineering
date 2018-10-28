@@ -7,7 +7,7 @@
 // can be reached.
 
 // Runtime: O(n)
-// Memory: O(n) for memoization
-// Memory: O(1) for Dynamic Programming
+// Memory: O(n) for top-down (memoization) DP
+// Memory: O(1) for bottom-up (tabulation) DP
 
 // Hint: This is a variation of the coin changing problem

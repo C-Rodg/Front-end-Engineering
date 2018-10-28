@@ -5,6 +5,7 @@
 // From denomination value til amount + 1 (or solution.length)
 // Solution at i = solution[i] + solution[i - denominationValue]
 
+// Bottom up approach - tabulation method
 function coinWays(denominations, amount) {
 	const solution = [];
 
@@ -33,7 +34,7 @@ function coinWays(denominations, amount) {
 	return solution[amount];
 }
 
-// Recursive solution
+// Recursive solution - top down approach
 function coinWaysRec(denominations, coins, amount) {
 	// base case
 	if (amount === 0) {

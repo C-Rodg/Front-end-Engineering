@@ -139,7 +139,24 @@ A list of common data structures, algorithms, and resources for Front-end Engine
   - used when a naive approach will result in exponential (2^n) runtime
   - problem to be solved must have an _optimal substructure_ and _overlapping subproblems_
   - uses pre-computed values for solved sub-problems so that we don't have to solve them again
-  - Examples: Fibonacci sequence, Knapsack problem, Levenshtein/Edit Distance
+  - Examples: Fibonacci sequence, Knapsack problem, Coin Changing, Game Scoring
+
+  - **Bottom Up (Tabulation Method):**
+
+    - faster, no recursion, constant lookups
+    - Methodology:
+      - create lookup array 'solutions' = [1, 0, 0, ... ] where length = amount + 1
+      - loop through options and get currentOptionValue
+      - for each currentOption, loop from currentOptionValue -> amount + 1 using 'j'
+      - set solutions[j] = solutions[j] + solutions[j - currentOptionValue]
+        -return solutions[amount]
+
+  - **Top Down (Memoization Method):**
+    - slower, recursive, but can be set to only solve needed subproblems
+    - Methodology:
+      - pass options, options length (idx), and amount
+      - base cases: amount = 0 -> 1; amount < 0 -> 0; idx <= 0 && amount >= 1 -> 0;
+      - rec(options, idx - 1, amount) + rec(options, idx, amount - options[idx - 1])
 
 ## The Interview
 
