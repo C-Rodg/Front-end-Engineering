@@ -1,4 +1,5 @@
 // Difficulty: Hard
+// Topic: Pointers
 
 // Given an array nums of n integers where n > 1,
 // return an array output such that output[i] is

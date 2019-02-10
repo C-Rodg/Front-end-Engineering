@@ -1,4 +1,5 @@
 // Difficulty: Easy
+// Topic: String Maps
 
 // Given a string, return T/F
 // for palindrome (same forward and backwards)

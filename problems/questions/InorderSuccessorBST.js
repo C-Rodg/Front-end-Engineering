@@ -1,3 +1,6 @@
+// Difficulty: Medium
+// Topic: BSTs
+
 // Given a BST and a value 'd' find the inorder successor (number after) of d
 
 // Runtime: O(log n)

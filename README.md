@@ -38,13 +38,76 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - Singleton Design Pattern
 - Factory Design Pattern
 
-## Problems (TODO:)
+## Problems
 
-- **Binary Search Trees:**
+- **Strings:**
 
-* **Dynamic Programming:**
-  - GameScoring
-  - CoinChanging
+  - AnagramString (Easy)
+  - PalindromeString (Easy)
+  - ReverseInteger (Easy)
+  - ReverseString (Easy)
+  - ReverseWords (Medium)
+
+- **Arrays & Windows:**
+
+  - ChunkArray (Easy)
+  - MaxBuySell (Medium)
+  - MaxSlidingWindow (Hard)
+  - MaxSumNonAdjacent (Medium)
+  - OverlappingTimes (Medium)
+  - ProductWithoutSelf (Hard)
+  - RotateArray (Medium)
+  - SpiralMatrix (Easy)
+
+- **Pointers:**
+  - MoveZerosToLeft (Medium)
+  - NumberPairs (Medium)
+  - PythagoreanTriplets (Easy)
+  - RemoveDuplicates (Medium)
+  - SmallestCommonNumber (Hard)
+  - SumOfThreeValues (Medium)
+
+* **Linked Lists:**
+
+  - LeastRecentlyUsedCache (Medium)
+
+* **Binary Search Trees:**
+
+  - ConvertNTreeToBST (Hard)
+  - DeleteZeroSumBST (Easy)
+  - GetKthBiggestBST (Medium)
+  - IdenticalBSTs (Easy)
+  - InorderSuccessorBST (Medium)
+  - RotatedBinarySearch (Medium)
+  - SearchSortedMatrix (Easy)
+  - SerializeDeserializeBST (Medium)
+
+* **Graphs:**
+
+  - CloneDirectedGraph (Medium)
+  - ConnectedCells (Hard)
+
+* **Permutations:**
+
+  - AllSubsets (Hard)
+
+* **Backtracking:**
+  - PrintAllParentheses (Hard)
+  - SolveNQueens (Hard)
+
+- **Dynamic Programming:**
+
+  - Fibonacci (Easy)
+  - GameScoring (Hard)
+  - CoinChanging (Hard)
+  - LevenshteinDistance (Hard)
+  - KnapsackProblem (Hard)
+
+- **Arithmetic:**
+  - ExpressionEvaluation (Hard)
+  - IsPrime (Easy)
+  - MissingNumber (Easy)
+  - UniformShuffle (Easy)
 
 ## Common Considerations
 

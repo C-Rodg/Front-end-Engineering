@@ -1,4 +1,5 @@
 // Difficulty: Easy
+// Topic: Arrays
 
 // Write a function that takes a number 'n' and returns
 // a nXn size integer matrix
