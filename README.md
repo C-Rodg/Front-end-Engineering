@@ -54,6 +54,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
   - MaxBuySell (Medium)
   - MaxSlidingWindow (Hard)
   - MaxSumNonAdjacent (Medium)
+  - MinimumWindowSubstring (Hard)
   - OverlappingTimes (Medium)
   - ProductWithoutSelf (Hard)
   - RotateArray (Medium)
