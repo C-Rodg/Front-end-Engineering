@@ -103,6 +103,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
   - CoinChanging (Hard)
   - LevenshteinDistance (Hard)
   - KnapsackProblem (Hard)
+  - StairClimbing (Easy)
 
 - **Arithmetic:**
   - ExpressionEvaluation (Hard)
@@ -208,7 +209,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
   - used when a naive approach will result in exponential (2^n) runtime
   - problem to be solved must have an _optimal substructure_ and _overlapping subproblems_
   - uses pre-computed values for solved sub-problems so that we don't have to solve them again
-  - Examples: Fibonacci sequence, Knapsack problem, Coin Changing, Game Scoring
+  - Examples: Fibonacci sequence, Knapsack problem, Coin Changing, Game Scoring, Stair Climb
 
   - **Bottom Up (Tabulation Method):**
 
