@@ -27,6 +27,7 @@ const minimumWindowSubstring = (s, t) => {
 		while (charCount === 0) {
 			// Check if current valid case length is
 			// less than the previous (or original) and save it if it is
+			// NOTE: this is where the check goes for 'minimums'
 			if (end - begin < minLength) {
 				minLength = end - begin;
 				minStartIdx = begin;
@@ -39,6 +40,8 @@ const minimumWindowSubstring = (s, t) => {
 			}
 			begin++;
 		}
+
+		// NOTE: this is where the check would go for 'maximums'
 	}
 
 	return minLength === Number.MAX_VALUE ? '' : s.substr(minStartIdx, minLength);

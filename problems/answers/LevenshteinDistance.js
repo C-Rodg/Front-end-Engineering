@@ -43,3 +43,66 @@ function editDistance(str1, str2) {
 	// Return the bottom right value
 	return matrix[endRow - 1][endCol - 1];
 }
+
+// ------  New Version! Simpler! ----------- //
+// 1.) Create matrix
+// 2.) Initialize matrix with at least 1 row and 1 column
+// 3.) Build matrix
+const getEditDistance = (strA, strB) => {
+	const table = [];
+
+	// Initialize vertically
+	for (let row = 0; row < strB.length + 1; row++) {
+		table.push([0]);
+	}
+
+	// Initialize horizontally
+	for (let col = 1; col < strA.length + 1; col++) {
+		table[0][col] = 0;
+	}
+
+	// Add chars to beginning and end to match row/col to index -> max calculations easier
+	strA = ' ' + strA;
+	strB = ' ' + strB;
+
+	for (let row = 1; row < strB.length + 1; row++) {
+		const currentRowChar = strB[row];
+		for (let col = 1; col < strA.length + 1; col++) {
+			const currentColChar = strA[col];
+
+			if (currentRowChar === currentColChar) {
+				// Take TL diagonal and add 1
+				table[row][col] = 1 + table[row - 1][col - 1];
+			} else {
+				// Take max of top and left
+				table[row][col] = Math.max(table[row - 1][col], table[row][col - 1]);
+			}
+		}
+	}
+
+	// Have complete matrix now!
+	const editDistance = table[strB.length - 1][strA.length - 1];
+
+	// If we want to find the matching letters start in BR corner and work our way back up
+	const substring = [];
+	let col = strA.length - 1;
+	for (let row = strB.length - 1; row > 0; row--) {
+		const currentValue = table[row][col];
+		if (
+			currentValue !== table[row - 1][col] &&
+			currentValue !== table[row][col - 1]
+		) {
+			// came from top left, so it is a match
+			substring.push(strB[row]);
+			row--;
+			col--;
+		} else if (currentValue === table[row - 1][col]) {
+			// Came from above
+			row--;
+		} else {
+			// Came from the left
+			col--;
+		}
+	}
+	return substring;
+};

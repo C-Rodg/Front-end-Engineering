@@ -10,3 +10,6 @@
 // Input
 // weights = {1, 3, 4, 5} and values = { 1, 4, 5, 7}
 // Allowed weight = 7
+
+// Hint:
+// Create matrix of val/weights by total weights
