@@ -328,4 +328,18 @@ class SinglyLinkedListWithTail {
 		}
 		return this;
 	}
+
+	reverseNoTail() {
+		let curr = this.head;
+		let prev = null,
+			next = null;
+		while (curr) {
+			next = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = next;
+		}
+		// Reassign the head
+		this.head = prev;
+	}
 }

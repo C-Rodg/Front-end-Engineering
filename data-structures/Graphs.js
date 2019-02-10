@@ -126,6 +126,7 @@ class Graph {
 	}
 
 	// BFS Recursive - uses a queue
+	// common use cases: 'width', 'shortest path', 'mazes'
 	bfsIterative(startVertex) {
 		const visited = {};
 		const results = [];

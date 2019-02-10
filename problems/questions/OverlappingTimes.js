@@ -11,3 +11,5 @@ function getMergedTimes(arrOfTimes) {
 
 // Runtime: O(n)
 // Space: O(n)
+
+// BONUS/Follow-up: How many meeting rooms do we need to have to accomodate all of the meetings?

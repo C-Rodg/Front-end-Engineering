@@ -197,6 +197,11 @@ A list of common data structures, algorithms, and resources for Front-end Engine
   - Consistently divide solution down to 1 (logarithm)
   - Examples: Merge sort, quick sort, binary search
 
+- **Backtracking:**
+
+  - similar to DFS with an added constraint that we stop exploring the subtree as soon as we know for sure that it won't lead to a valid solution
+  - typical constraints: 1.) Return a collection of all answers 2.) More concerned with what the actual solutions are rather than say the most optimum value (if that is needed it is likely DP/Greedy)
+
 - **Dynamic Programming:**
 
   - used when a naive approach will result in exponential (2^n) runtime
