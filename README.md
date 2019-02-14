@@ -263,6 +263,8 @@ A type of system design interview might be something like 'how would you build a
 
 ### Video Resources
 
+- [Tushar Roy's YouTube channel](https://www.youtube.com/channel/UCZLJf_R2sWyUtXSKiKlyvAw)
+
 - [Stephen Grider's Coding Interview Bootcamp](https://www.udemy.com/coding-interview-bootcamp-algorithms-and-data-structure/)
 
 - [Four Semesters of CS in 4 Hours](https://btholt.github.io/four-semesters-of-cs/)
