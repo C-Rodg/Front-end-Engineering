@@ -51,6 +51,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - **Arrays & Windows:**
 
   - ChunkArray (Easy)
+  - ContainerWithMostWater (Medium)
   - MaxBuySell (Medium)
   - MaxSlidingWindow (Hard)
   - MaxSumNonAdjacent (Medium)
