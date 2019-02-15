@@ -184,6 +184,8 @@ class BST {
 		return tree;
 	}
 }
+
+// Root, Left, Right
 function recursiveDFSPreorder(node, fn) {
 	if (!node) {
 		return;
@@ -196,6 +198,7 @@ function recursiveDFSPreorder(node, fn) {
 	recursiveDFSPreorder(node.right, fn);
 }
 
+// Left, Root, Right
 function recursiveDFSInorder(node, fn) {
 	if (node.left) {
 		recursiveDFSInorder(node.left, fn);
@@ -208,6 +211,7 @@ function recursiveDFSInorder(node, fn) {
 	}
 }
 
+// Left, Right, Root
 function recursiveDFSPostorder(node, fn) {
 	if (node.left) {
 		recursiveDFSPostorder(node.left, fn);
@@ -216,6 +220,51 @@ function recursiveDFSPostorder(node, fn) {
 		recursiveDFSPostorder(node.right, fn);
 	}
 	fn(node);
+}
+
+// Root, Left, Right - 1 stack
+function iterativeDFSPreorder(root) {
+	const stack = [root];
+	while (stack.length) {
+		const current = stack.pop();
+		console.log(current.data);
+		current.right && stack.push(current.right);
+		current.left && stack.push(current.left);
+	}
+}
+
+// Left, Right, Root - 2 stacks
+function iterativeDFSPostorder(root) {
+	const s1 = [root];
+	const s2 = [];
+	while (s1.length) {
+		const current = s1.pop();
+		s2.push(current);
+		current.left && s1.push(current.left);
+		current.right && s1.push(current.right);
+	}
+
+	while (s2.length) {
+		console.log(s2.pop().data);
+	}
+}
+
+// Left, Root, Right - 1 stack, modified while loop
+function iterativeDFSInorder(root) {
+	const stack = [];
+	while (true) {
+		if (root !== null) {
+			stack.push(root);
+			root = root.left;
+		} else {
+			if (stack.length === 0) {
+				break;
+			}
+			root = stack.pop();
+			console.log(root.data);
+			root = root.right;
+		}
+	}
 }
 
 // ---------------------------------- //
