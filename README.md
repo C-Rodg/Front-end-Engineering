@@ -193,6 +193,11 @@ A list of common data structures, algorithms, and resources for Front-end Engine
 - **Sliding Window:**
 
   - create a window which can either be an array or number from one position to another
+  - typically 4 types of 'windows':
+    - fast/slow: 0 (slow) & 4 (fast); 1 (slow); 2 (slow)...
+    - fast/catch-up: 2 (slow) & 2(fast); 4(fast) then jump with slow to 4
+    - fast/lag: not next to eachother - 0, 2
+    - front/back: 0, arr.length - 1 and move to center
   - Examples: Find max sum of 'n' adjacent indexes (Kandane's Algorithm), find longest set of unique characters
 
 - **Divide & Conquer:**
