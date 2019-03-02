@@ -53,6 +53,14 @@ class Node {
 	}
 
 	remove(data) {
+		// Main cases when trying to delete a node from a BST
+		// 1.) No tree
+		// 2.) No node found
+		// 3.) Node found, no child nodes
+		// 4.) Node found, 1 child node - assign parent.left/right to child.left/right
+		// 5.) Node found, 2 child nodes - find minimum value on the right (.right->.left->.left...).
+		// ---------- Delete the minRight value from the tree.  (recursion)
+		// ---------- Set current.val = minRight.val (swapping values)
 		const removeNode = (node, data) => {
 			// No tree passed in
 			if (!node) {
