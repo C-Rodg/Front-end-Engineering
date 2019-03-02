@@ -5,7 +5,16 @@
 // is it a binary tree (2 children, no order) or
 // a binary search tree (2 children, sorted)?
 
+// Terminology:
+// 'Complete' - a tree where all levels are filled except perhaps the last,
+// 				which must be filled from left to right.
+// 'Full' or 'Proper' - a tree where all nodes have 0 or 2 children
+// 'Perfect' - both 'Full' & 'Complete'
+// 'Skewed' - all nodes except one have one and only one child (i.e. all left node childs)
+
 // Perfect Tree formula:
+// Total number of nodes = (2 ^ (h + 1)) - 1
+// Total number of leaf nodes = 2^h or  (Total Node Count + 1) / 2
 // height = log base 2 (node count +1)  ===  2 ^ h = nodeCount + 1
 
 // Create a node class used to implement a BST
