@@ -1,5 +1,11 @@
 // TOPICS: AVL Tree, Red-Black Tree, 2-3 Tree
 
+// TLDR; For advanced trees use in the following scenarios:
+// AVL Tree -> lots of searching
+// Red-Black Tree -> lots of insertions and/or deletions
+
+// AVL Trees, Red-Black, and 2-3 Trees all insert, delete, and search in O(log n)
+
 // ---------------------------------------- //
 // AVL Tree
 // Basically a binary search tree that is constantly balanced - |left height - right height| <= 1
