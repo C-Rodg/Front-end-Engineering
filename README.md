@@ -185,6 +185,12 @@ A list of common data structures, algorithms, and resources for Front-end Engine
   - Examples: strings, anagrams...
   - `{ a: 2, c: 1: t: 2}`
 
+- **Reverse Hash Tables:**
+
+  - build a reverse map so (k, v) is now (v, k) and then find missing key to find start. After start is found, can track through until end of mappings.
+  - Examples: destinations, mappings
+  - `{NYC: Chicago, Boston: NYC } -> {Chicago: NYC, NYC: Boston} - Boston key is missing so that is start`
+
 - **Multiple Pointers:**
 
   - uses two pointers (usually a read and a write pointer) and moves them in direction toward solution
