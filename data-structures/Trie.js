@@ -11,6 +11,10 @@ class Node {
 		this.end = true;
 	}
 
+	setNotEnd() {
+		this.end = false;
+	}
+
 	isEnd() {
 		return this.end;
 	}
@@ -65,5 +69,55 @@ class Trie {
 		};
 		search(this.root, '');
 		return words.length > 0 ? words : null;
+	}
+
+	// 3 scenarios for deleting a word in a trie:
+	// - no suffix or prefix words -> just remove all nodes
+	// - word to delete is a prefix -> just unmark isEnd
+	// - word to delete has a common prefix -> traverse up the path deleting nodes until common prefix is hit
+	delete(word) {
+		// Helper function:
+		// Works through the levels of the word/key
+		// Once it reaches the end of the word, it checks if the last node
+		// has any children.  If it does, we just mark as no longer an end.
+		// If it doesn't, we continue bubbling up deleting the keys until we find a node
+		// that either has other children or is marked as an end.
+		const deleteHelper = (word, node, length, level) => {
+			let deletedSelf = false;
+			if (!node) {
+				console.log("Key doesn't exist");
+				return deletedSelf;
+			}
+
+			// Base case
+			if (length === level) {
+				if (node.keys.length === 0) {
+					deletedSelf = true;
+				} else {
+					node.setNotEnd();
+					deletedSelf = false;
+				}
+			} else {
+				let childNode = node.keys.get(word[level]);
+				let childDeleted = deleteHelper(word, childNode, length, level + 1);
+				if (childDeleted) {
+					node.keys.delete(word[level]);
+
+					if (node.isEnd()) {
+						deletedSelf = false;
+					} else if (node.keys.length) {
+						deletedSelf = false;
+					} else {
+						deletedSelf = true;
+					}
+				} else {
+					deletedSelf = false;
+				}
+			}
+
+			return deletedSelf;
+		};
+
+		deleteHelper(word, this.root, word.length, 0);
 	}
 }
