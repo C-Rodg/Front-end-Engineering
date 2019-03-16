@@ -81,3 +81,9 @@ class HashTable {
 		return results;
 	}
 }
+
+// Basic hash functions
+// - Arithmetic Modular: return key % table.length;
+// - Truncation: return key % 1000;  // will return keys 1-3 digits long
+// - Folding: takes a key and chunk size and does some kind of arithmetic at each chunk:
+// - - i.e. key = 456789, chunk = 2 may result in 45 + 67 + 89 = 201
