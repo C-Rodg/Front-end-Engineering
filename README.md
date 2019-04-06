@@ -221,6 +221,7 @@ A list of common data structures, algorithms, and resources for Front-end Engine
   - used when a naive approach will result in exponential (2^n) runtime
   - problem to be solved must have an _optimal substructure_ and _overlapping subproblems_
   - uses pre-computed values for solved sub-problems so that we don't have to solve them again
+  - problem solving patterns: 1.) Adjacency matrix - solve left column and top row first. 2.) Space optimized overwriting array - initialize, solve first row, and then with nested loops rows 1->end, cols end -> 0 (so that not overwriting needed value yet)
   - Examples: Fibonacci sequence, Knapsack problem, Coin Changing, Game Scoring, Stair Climb
 
   - **Bottom Up (Tabulation Method):**
