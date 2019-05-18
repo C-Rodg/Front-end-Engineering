@@ -313,6 +313,10 @@ A type of system design interview might be something like 'how would you build a
 
 - [Hackernoon Top 50 Algorithm and Coding Interview Questions](https://hackernoon.com/50-data-structure-and-algorithms-interview-questions-for-programmers-b4b1ac61f5b0)
 
+- [Software Engineer Study Guide](https://medium.com/better-programming/the-software-engineering-study-guide-bac25b8b61eb)
+
+- [Top 75 Leetcode](https://www.teamblind.com/article/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU)
+
 ### Contributors
 
 Curtis Rodgers (me) : https://curtisrodgers.com
