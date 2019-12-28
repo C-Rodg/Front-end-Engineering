@@ -159,12 +159,12 @@ class BST {
 				nodeQueue.push(current.right || null);
 			} else {
 				// null marker
-				results.push('null');
+				results.push(null);
 			}
 		}
 
 		// Strip off the last leaf null nodes
-		while (results[results.length - 1] === 'null') {
+		while (results[results.length - 1] === null) {
 			results.pop();
 		}
 
