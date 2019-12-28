@@ -279,7 +279,12 @@ A type of system design interview might be something like 'how would you build a
 
 - [Stephen Grider's Coding Interview Bootcamp](https://www.udemy.com/coding-interview-bootcamp-algorithms-and-data-structure/)
 
-- [Four Semesters of CS in 4 Hours](https://btholt.github.io/four-semesters-of-cs/)
+- [Frontnd Masters](https://frontendmasters.com/)
+
+  - Brian Holt: Four Semesters of CS in 4 Hours parts 1 & 2
+    - Sections: Pathfinding, Graphs, Mazes, Tries, and Heaps
+  - Bianca Gandolfo: Tree and Graph Data Structures
+    - Sections: Graphs, Graph Search
 
 - [Algorithms in Motion](https://www.manning.com/livevideo/algorithms-in-motion)
 
