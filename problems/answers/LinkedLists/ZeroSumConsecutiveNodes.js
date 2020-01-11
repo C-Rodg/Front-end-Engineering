@@ -16,11 +16,14 @@ function removeZeroSum(head) {
 	while (curr) {
 		prefix += curr.val;
 		if (!seen.hasOwnProperty(MARK + prefix)) {
+			// Add to hashmap
 			seen[MARK + prefix] = curr;
 		} else {
+			// We've seen this sum, so let's remove everything between
 			let node = seen[MARK + prefix];
 			node.next = curr.next;
 
+			// Update the hashmap incase we see the same sum again
 			const keys = Object.keys(seen);
 			while (keys[keys.length - 1] !== MARK + prefix) {
 				const lastKey = keys.pop();
