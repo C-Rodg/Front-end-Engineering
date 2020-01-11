@@ -144,7 +144,7 @@ class BST {
 		this.root = null;
 	}
 
-	// Convert tree to string using BST
+	// Convert tree to string using BST (this is using BFS - can also be done using Preorder DFS)
 	serialize() {
 		if (!this.root) {
 			return '';
@@ -172,6 +172,7 @@ class BST {
 		return JSON.stringify(results);
 	}
 
+	// deserialize (this is using BFS)
 	deserialize(str) {
 		const arr = JSON.parse(str);
 		if (!arr.length) {
