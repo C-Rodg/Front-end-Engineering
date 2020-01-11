@@ -3,7 +3,6 @@ node_modules/
 dist/
 builds/
 OffTheRecord.js
-problems/current-practice/
 
 # OS generated files #
 ######################
