@@ -40,6 +40,10 @@ function canFinishCourses(numCourses, preReqs) {
 
 // Another way to detect cycles in a direct graph is
 // to use the white-grey-black approach:
+
+// Think of it as unvisited (the nodes you go through),
+// currently visiting (the nodes you check to see if already exists = cycle)
+// and visited (the nodes you've completely explored all of their neighbors).
 function detectCycle(matrix) {
 	// Create sets
 	const white = new Set(); // unvisited
