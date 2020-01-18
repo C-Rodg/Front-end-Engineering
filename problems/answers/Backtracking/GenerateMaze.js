@@ -1,8 +1,9 @@
 // Main recursive function
 function generateMaze(maze, [row, col]) {
-	const node = maze[row][col];
-	node.visited = true;
+	// Mark as visited
+	maze[row][col].visited = true;
 
+	// Continue DFS
 	const randomDirections = getRandomDirections();
 	randomDirections.forEach(direction => {
 		const [rowDiff, colDiff] = getDirection(direction);
