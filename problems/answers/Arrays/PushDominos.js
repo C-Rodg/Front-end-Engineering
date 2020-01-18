@@ -51,12 +51,12 @@ function pushDominos(str) {
 	// Take the difference to calculate the result
 	const result = [];
 	for (let i = 0; i < arr.length; i++) {
-		const leftForce = leftForce[i];
-		const rightForce = rightForce[i];
+		const leftForceVal = leftForce[i];
+		const rightForceVal = rightForce[i];
 
-		if (leftForce > rightForce) {
+		if (leftForceVal > rightForceVal) {
 			result.push('L');
-		} else if (leftForce < rightForce) {
+		} else if (leftForceVal < rightForceVal) {
 			result.push('R');
 		} else {
 			result.push('.');
