@@ -94,3 +94,52 @@ function detectCycle(matrix) {
 
 	return false;
 }
+
+// Detect a cycle in an undirected graph
+function detectCycleUndirected(matrix) {
+	const visited = new Set();
+	for (let vtx of Object.keys(matrix)) {
+		if (visited.has(vtx)) {
+			// we've already visited this node
+			continue;
+		}
+
+		const hasCycle = detectCycleHelper(vtx, visited, null);
+		if (hasCycle) {
+			// Cycle detected
+			return true;
+		}
+	}
+
+	// Recursive helper function
+	function detectCycleHelper(vertex, visited, parent) {
+		// Mark vertex as visited
+		visited.add(vertex);
+
+		// Loop through edges
+		for (let neighbor of matrix[vertex]) {
+			if (neighbor === parent) {
+				// Since it's undirected, it's not a cycle if node
+				// just has a connection to it's neighbor in both directions
+				continue;
+			}
+
+			if (visited.has(neighbor)) {
+				// Cycle detected
+				return true;
+			}
+
+			// Recursive call with neighbor and setting current as the parent
+			const hasCycle = detectCycleHelper(neighbor, visited, vertex);
+			if (hasCycle) {
+				return true;
+			}
+		}
+
+		// No cycle detected
+		return false;
+	}
+
+	// No cycle detected
+	return false;
+}
