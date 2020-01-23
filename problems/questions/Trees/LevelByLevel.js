@@ -4,3 +4,7 @@
 // A
 // B C
 // D E F
+
+// Hint 1: BFS
+
+// Hint 2: Calculate process size
