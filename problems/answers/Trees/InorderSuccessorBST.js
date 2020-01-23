@@ -28,3 +28,22 @@ function findMin(node) {
 	}
 	return node;
 }
+
+// Variant question.  Given a node, find the inorder successor
+function inorderSuccessorFromNode(node) {
+	if (node.right) {
+		// If it has a right node, find
+		let curr = node.right;
+		while (curr.left) {
+			curr = curr.left;
+		}
+		return curr;
+	}
+
+	// Continue up the parents until you find the one greater than node
+	let parent = node.parent;
+	while (parent && parent.val < node.val) {
+		parent = parent.parent;
+	}
+	return parent;
+}
