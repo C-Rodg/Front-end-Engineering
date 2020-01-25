@@ -1,3 +1,88 @@
+// Solution 2:
+// 4 main cases to handle - digit, open parentheses, closed parentheses, and operator
+function evaluate(str) {
+	const values = [];
+	const ops = [];
+	let i = 0;
+	while (i < str.length) {
+		const char = str[i];
+		if (char === ' ') {
+			// Just move on
+			i++;
+			continue;
+		} else if (char === '(') {
+			// Just add it to the operator stack
+			ops.push(char);
+		} else if (isDigit(char)) {
+			let val = 0;
+			// check to see if there is more than one digit
+			while (i < str.length && isDigit(str[i])) {
+				val = val * 10 + Number(str[i]);
+				i += 1;
+			}
+
+			values.push(val);
+		} else if (char === ')') {
+			while (ops.length && ops[ops.length - 1] !== '(') {
+				// Repeatedly process the values between the parentheses
+				let val2 = values.pop() || 0;
+				let val1 = values.pop() || 0;
+				let op = ops.pop();
+				let result = applyOp(val1, val2, op);
+				// Replace the popped values with the result
+				values.push(result);
+			}
+
+			// Remove the opening parentheses
+			ops.pop();
+		} else {
+			// Must be an operator
+
+			// while there are operators and the precedence of the current character is less than the precedence of the top in the stack
+			while (
+				ops.length &&
+				getPrecedence(char) <= getPrecedence(ops[ops.length - 1])
+			) {
+				let val2 = values.pop() || 0;
+				let val1 = values.pop() || 0;
+				let op = ops.pop();
+				let result = applyOp(val1, val2, op);
+				values.push(result);
+			}
+
+			// Add the new operator to the stack
+			ops.push(char);
+		}
+
+		// Increment
+		i += 1;
+	}
+}
+
+// Helper - get a numerical value for precedence
+function getPrecedence(char) {
+	if (char === '+' || char === '-') {
+		return 1;
+	} else if (char === '*' || char === '/') {
+		return 2;
+	}
+	return 0;
+}
+
+// Helper - apply a calculation
+function applyOp(a, b, op) {
+	if (op === '+') {
+		return a + b;
+	} else if (op === '-') {
+		return a - b;
+	} else if (op === '*') {
+		return a * b;
+	} else if (op === '/') {
+		return a / b;
+	}
+}
+
+// Solution 2 - slightly more complex
 function expressionEvaluation(str) {
 	const operands = [];
 	// Get postfix representation
@@ -30,7 +115,7 @@ function expressionEvaluation(str) {
 // Convert string to postfix array
 function convertToPostfix(str) {
 	// Build postfix notation
-	const opStack = [];
+	const operators = [];
 	let postfix = [];
 
 	// Loop through string
