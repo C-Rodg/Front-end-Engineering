@@ -1,4 +1,27 @@
+// Just return the max profit
 function maxBuySell(arr) {
+	// Track the global max profit and the minimum price seen
+	let maxProfit = 0;
+	let minSeen = arr[0];
+	// Loop through the prices
+	for (let price of arr) {
+		// If the current price is less than the minimum price seen
+		// we should update it because from this point forward, that is the
+		// best buy price.
+		if (price < minSeen) {
+			minSeen = price;
+		}
+		// Determine if profit from the smallest we've seen + this sale price
+		// is greater than the global maxProfit
+		maxProfit = Math.max(maxProfit, price - minSeen);
+	}
+	return maxProfit;
+}
+
+// Note: the solutions below still use the algorithm above,
+// - but just track more information to be returned.
+
+function maxBuySellMoreInfo(arr) {
 	let currentProfit = 0;
 	let currentBuy = arr[0];
 	let globalSell = arr[1];
@@ -27,7 +50,7 @@ function maxBuySell(arr) {
 // currentProfit
 // maxProfit
 
-const maxBuySell = prices => {
+const maxBuySellMoreInfo2 = prices => {
 	let currentBuy = prices[0] || 0;
 	let currentSell = prices[1] || 0;
 	let maxProfit = Math.max(currentSell - currentBuy, 0);
