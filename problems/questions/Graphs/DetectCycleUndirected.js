@@ -15,3 +15,9 @@ const graph2 = {
 	c: ['a', 'b']
 };
 // Output: true
+
+// Hint 1: DFS
+
+// Hint 2: Think about what we need to track in each set of recursion..
+
+// Hint 3: An undirected graph vertex will always contain it's neighbor in both directions, but this doesn't mean it's a cycle..
