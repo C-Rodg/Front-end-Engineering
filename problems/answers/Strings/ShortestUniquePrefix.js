@@ -34,6 +34,10 @@ class Node {
 			// Move the current node to the next character node
 			currentNode = currentNode.children[char];
 		}
+
+		if (currentNode) {
+			currentNode.isEnd = true;
+		}
 	}
 }
 
