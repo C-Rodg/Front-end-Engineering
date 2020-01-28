@@ -10,7 +10,7 @@ function autocomplete(words, prefix) {
 	let curr = root;
 	for (let i = 0; i < prefix.length; i++) {
 		let char = prefix[i];
-		if (!curr.children[char]) {
+		if (!curr || !curr.children[char]) {
 			return false;
 		}
 
