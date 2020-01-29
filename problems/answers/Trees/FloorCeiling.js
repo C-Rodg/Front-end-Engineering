@@ -43,12 +43,15 @@ function findCeil(node, k) {
 function findCeilIterative(root, k) {
 	const stack = [];
 	let curr = root;
-
+	// Note we're only tracking nodes that are greater than our key
 	while (curr) {
+		// If the current value is greater than the key, add it to the stack
+		// and set the current to left
 		if (curr.val > k) {
 			stack.push(curr);
 			curr = curr.left;
 		}
+		// If the current value is less than or equal to the key, move right
 		if (curr.val <= k) {
 			curr = curr.right;
 		}
