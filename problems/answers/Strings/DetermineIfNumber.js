@@ -21,6 +21,10 @@ const LAMBDAS = {
 	DOT: c => c === '.'
 };
 
+// To solve this problem think about:
+// 1.) the flow of states
+// 2.) what means a valid state
+// 3.) what are the valid end states
 function isValidNumber(str) {
 	let currentState = 'BEGIN';
 	// Loop through the characters of the string
