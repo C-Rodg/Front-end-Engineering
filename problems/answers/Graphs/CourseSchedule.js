@@ -13,14 +13,14 @@ function canFinishCourses(numCourses, preReqs) {
 	const visited = new Set();
 
 	// Recursive function to be called for DFS
-	function visit(vertex) {
+	function hasCycle(vertex) {
 		// Add the node to visited
 		visited.add(vertex);
 
 		// Go through neighbors and check if those neighbors
 		// have already been visited or lead to cycles themselves
 		for (let neighbor of matrix[vertex]) {
-			if (visited.has(neighbor) || visit(neighbor)) {
+			if (visited.has(neighbor) || hasCycle(neighbor)) {
 				return true;
 			}
 		}
@@ -31,7 +31,7 @@ function canFinishCourses(numCourses, preReqs) {
 
 	// Loop through each node and check if there is a cycle
 	for (let i = 0; i < numCourses; i++) {
-		if (visit(i)) {
+		if (hasCycle(i)) {
 			return false;
 		}
 	}
