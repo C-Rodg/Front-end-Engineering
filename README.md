@@ -325,6 +325,10 @@ A type of system design interview might be something like 'how would you build a
 
 - [Software Engineer Study Guide](https://medium.com/better-programming/the-software-engineering-study-guide-bac25b8b61eb)
 
+- [Comprehensive DS & Algo Study Guide](https://leetcode.com/discuss/general-discussion/494279/Comprehensive-Data-Structure-and-Algorithm-Study-Guide)
+
+- [Dynamic Programming Patterns](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns)
+
 - [Top 75 Leetcode](https://www.teamblind.com/article/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU)
 
 ### Contributors
