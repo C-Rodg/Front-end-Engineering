@@ -329,6 +329,8 @@ A type of system design interview might be something like 'how would you build a
 
 - [Dynamic Programming Patterns](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns)
 
+- [William Fiset YouTube Intro's](https://www.youtube.com/channel/UCD8yeTczadqdARzQUp29PJw)
+
 - [Top 75 Leetcode](https://www.teamblind.com/article/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU)
 
 ### Contributors

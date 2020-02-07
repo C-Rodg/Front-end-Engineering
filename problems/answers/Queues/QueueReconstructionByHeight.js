@@ -14,7 +14,8 @@ function queueReconstruction(arr) {
 	});
 
 	const q = [];
-	// Insert each person.  Since we know it's tallest > smallest, we know that inserting a new person will not mess up our order.
+	// Insert each person.  Since we know it's tallest -> smallest,
+	// we know that inserting a new person will not mess up our order.
 	for (let person of arr) {
 		const position = person[1];
 		q.splice(position, 0, person);
