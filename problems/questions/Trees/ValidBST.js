@@ -1,4 +1,4 @@
-// Given a binary TreeWalker, determine if it is ValidityState.
+// Given a binary tree, determine if it is valid.
 
 // HINT:
 // Max & Min
