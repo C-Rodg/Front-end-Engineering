@@ -5,7 +5,10 @@
 // Tip: Use a reverse inorder traversal
 
 function getKthBiggest(root, k) {
+	// Use a global count variable
 	let count = 0;
+
+	// Traverse the tree in reverse inorder
 	function traverse(node) {
 		if (!node) {
 			return;
@@ -13,9 +16,11 @@ function getKthBiggest(root, k) {
 
 		let result = traverse(node.right);
 		if (result) {
+			// return the result if it's in the right subtree
 			return result;
 		}
 
+		// Process the node, increment count, and return it if we found kth node
 		count += 1;
 		if (count === k) {
 			return node;
@@ -23,8 +28,11 @@ function getKthBiggest(root, k) {
 
 		result = traverse(node.left);
 		if (result) {
+			// return the result if it's in the left subtree
 			return result;
 		}
+
+		// return undefined to prevent anything from being returned before we find k
 	}
 
 	return traverse(root);
