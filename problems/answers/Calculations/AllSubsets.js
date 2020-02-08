@@ -6,19 +6,20 @@
 
 // Question #2: To solve, just keep a sum count and if sum === 'k', then add the set
 
-function getAllSubsets(...args) {
-	let numberOfSubsets = Math.pow(2, args.length);
+function getAllSubsets(arr) {
+	const numberOfSubsets = Math.pow(2, arr.length);
 	const result = [];
 	for (let i = 0; i < numberOfSubsets; i++) {
 		const newSet = [];
-		const binaryString = getBinaryString(i).padStart(args.length);
+		const binaryString = getBinaryString(i).padStart(arr.length, '0');
 		for (let c = 0; c < binaryString.length; c++) {
 			if (binaryString[c] === '1') {
-				newSet.push(args[c]);
+				newSet.push(arr[c]);
 			}
 		}
 		result.push(newSet);
 	}
+	return result;
 }
 
 // Helper to get binary string
