@@ -10,9 +10,9 @@ function cloneDirectedGraph(node, completedNodes) {
 
 	// Loop through neighbors
 	node.neighbors.forEach(neighbor => {
-		let x = completedNodes[neighbor.data];
-		// If neighbor doesn't exist in hash, call fn recursively with neighbor node
-		if (!x) {
+		let clonedNeighbor = completedNodes[neighbor.data];
+		// If cloned neighbor doesn't exist in hash, call fn recursively with neighbor node
+		if (!clonedNeighbor) {
 			cloned.neighbors.push(cloneDirectedGraph(neighbor), completedNodes);
 		} else {
 			// Else just add the cloned existing node to the neighbors array

@@ -1,4 +1,13 @@
-// Given 2 strings 's' and 't', find and return all indexes in a string s where t is an anagram.
+// QUESTION 1:
+// Check if two strings are anagrams of eachother
+// An anagram uses the same amount of characters
+
+// Input: "cat", "act"
+// Output: true
+
+// ------------ QUESTION 2: -------------------- //
+// Given 2 strings 's' and 't', find and return all indexes
+// in a string s where t is an anagram.
 
 // Input: ('acdbacdacb', 'abc')
 // Output: [3, 7]

@@ -1,3 +1,47 @@
+// QUESTION 1:
+function isAnagram(stringA, stringB) {
+	if (stringA.length !== stringB.length) {
+		return false;
+	}
+
+	const charMap = {};
+	for (let c of stringA) {
+		if (!charMap[c]) {
+			charMap[c] = 0;
+		}
+		charMap[c] += 1;
+	}
+
+	for (let c of stringB) {
+		if (!charMap[c]) {
+			return false;
+		}
+
+		charMap[c] -= 1;
+
+		if (charMap[c] === 0) {
+			delete charMap[c];
+		}
+	}
+
+	return Object.keys(charMap).length === 0;
+}
+
+// Quick and dirty solution
+function anagramSort(stringA, stringB) {
+	return cleanString(stringA) === cleanString(stringB);
+}
+
+function cleanString(str) {
+	return str
+		.replace(/\W/g, '')
+		.toUpperCase()
+		.split('')
+		.sort()
+		.join();
+}
+
+// QUESTION 2:
 // The main idea here is to build a character map that is offset in the positive direction for the sub word.
 // We then go through the main word and subtract for new characters (and add the one we are removing if our window is big enough).
 // Since the sub anagram offset the character map size initially, if at any point it has 0 keys it must be balanced and this must be an anagram.
