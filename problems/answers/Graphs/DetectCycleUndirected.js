@@ -17,7 +17,7 @@ function detectCycleUndirected(adjList) {
 	return false;
 }
 
-//
+// Perform DFS
 function isCycle(v, adjList, visited, parent) {
 	// Mark this vertex as now visited
 	visited[v] = true;
