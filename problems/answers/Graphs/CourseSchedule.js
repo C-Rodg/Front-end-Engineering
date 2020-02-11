@@ -1,5 +1,5 @@
 function canFinishCourses(numCourses, preReqs) {
-	// Build the adjacency matrix
+	// Build the adjacency matrix of course as key and prereqs as key values
 	const matrix = {};
 	for (let edge of preReqs) {
 		const vtx = edge[0];
@@ -30,6 +30,7 @@ function canFinishCourses(numCourses, preReqs) {
 	}
 
 	// Loop through each node and check if there is a cycle
+	// Could also use Object.keys(matrix) if it's not sequential...
 	for (let i = 0; i < numCourses; i++) {
 		if (hasCycle(i)) {
 			return false;
@@ -122,20 +123,13 @@ function detectCycleUndirected(matrix) {
 
 		// Loop through edges
 		for (let neighbor of matrix[vertex]) {
-			if (neighbor === parent) {
-				// Since it's undirected, it's not a cycle if node
-				// just has a connection to it's neighbor in both directions
-				continue;
-			}
-
-			if (visited.has(neighbor)) {
-				// Cycle detected
-				return true;
-			}
-
-			// Recursive call with neighbor and setting current as the parent
-			const hasCycle = detectCycleHelper(neighbor, visited, vertex);
-			if (hasCycle) {
+			if (!visited.has(neighbor)) {
+				// If we have not visited this neighbor, check if there is a potential cycle
+				if (detectCycleHelper(neighbor, visited, vertex)) {
+					return true;
+				}
+			} else if (neighbor !== parent) {
+				// This neighbor is marked as visited and is not the parent, so must be a cycle
 				return true;
 			}
 		}

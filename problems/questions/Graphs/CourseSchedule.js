@@ -1,6 +1,6 @@
 // There are a total of n courses you have to take
-// Some courses may have prerequisites, for example to take course 0
-// you have to first take course 1, which is expressed as a pair [0,1].
+// Some courses may have prerequisites, for example to take course 305
+// you have to first take course 304, which is expressed as a pair [305, 304].
 
 // Given the total number of courses and a list of pre-req pairs, is it possible to finish all courses?
 
