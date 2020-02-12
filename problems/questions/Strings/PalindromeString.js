@@ -1,7 +1,8 @@
+// ---------------- Question 1: ------------------ //
+
 // Difficulty: Easy
 // Topic: String Maps
 
-// Question 1:
 // Given a string, return T/F
 // for palindrome (same forward and backwards)
 
@@ -9,7 +10,7 @@ function isPalindrome(str) {
 	// TODO:
 }
 
-// Question 2:
+// ---------------- Question 2: ------------------ //
 // Find the longest palindromic substring
 function longestPalindrome(str) {}
 
@@ -20,7 +21,7 @@ function longestPalindrome(str) {}
 // Input: "cbbd"
 // Output: "bb"
 
-// Question 3:
+// ---------------- Question 3: ------------------ //
 // Given a string determine if there is a way to arrange the string
 // such that the string is a palindrome.  Otherwise return null.
 

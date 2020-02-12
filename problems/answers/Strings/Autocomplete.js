@@ -1,4 +1,7 @@
-// There are 3 main steps here - 1.) Make the Trie 2.) Navigate the correct position and 3.) Perform a DFS
+// There are 3 main steps here -
+// 1.) Make the Trie
+// 2.) Navigate the correct position
+// 3.) Perform a DFS
 function autocomplete(words, prefix) {
 	// Build the trie
 	const root = new Node(words[0]);

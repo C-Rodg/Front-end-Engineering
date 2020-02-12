@@ -1,4 +1,5 @@
-// Given a preorder and inorder traversals of a binary tree, write a function to reconstruct the tree.
+// Given a preorder and inorder traversals of a binary tree,
+// write a function to reconstruct the tree.
 
 // Preorder:
 // [a, b, d, e, c, f, g]

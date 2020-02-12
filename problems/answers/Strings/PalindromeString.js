@@ -62,8 +62,8 @@ function canBePalindrome(str) {
 			// add it to the result, but only half of them because the other half will be at the end
 			result += char.repeat(charMap[char] / 2);
 		} else if (!oddCharacter) {
-			// No odd character yet, we're allowed one
-			oddCharacter = char;
+			// No odd character yet, we're allowed one group
+			oddCharacter = char.repeat(charMap[char]);
 		} else {
 			// Not possible, can't have two odd character counts
 			return false;

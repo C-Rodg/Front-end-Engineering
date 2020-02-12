@@ -8,12 +8,13 @@ class Node {
 		if (!val) {
 			// At the end of the string
 			this.isEnd = true;
-			return;
+			return this;
 		}
 		// Use the first letter as the key and recursively call on the rest
 		const first = val[0];
 		const next = val.substr(1);
 		this.children[first] = new Node(next);
+		return this;
 	}
 
 	// Method to add new word to trie

@@ -32,7 +32,7 @@ function findMin(node) {
 // Variant question.  Given a node, find the inorder successor
 function inorderSuccessorFromNode(node) {
 	if (node.right) {
-		// If it has a right node, find
+		// If it has a right node, find it's minimum
 		let curr = node.right;
 		while (curr.left) {
 			curr = curr.left;

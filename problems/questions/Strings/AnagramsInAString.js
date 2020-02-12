@@ -1,4 +1,4 @@
-// QUESTION 1:
+// ------------ QUESTION 1: -------------------- //
 // Check if two strings are anagrams of eachother
 // An anagram uses the same amount of characters
 
