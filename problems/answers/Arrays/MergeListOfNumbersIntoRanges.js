@@ -6,8 +6,8 @@ function mergeListOfNumbersIntoRanges(arr) {
 
 	// Loop through the numbers
 	for (let num of arr) {
-		// if the current high + 1 is still less than 'num' then we know the range is broken.
-		if (currentHigh + 1 < num) {
+		// if the current number is greater than the current high + 1, we know it jumps
+		if (num > currentHigh + 1) {
 			// Add the result
 			results.push([currentLow, currentHigh]);
 			// Since 'num' broke the range, it is now our currentLow

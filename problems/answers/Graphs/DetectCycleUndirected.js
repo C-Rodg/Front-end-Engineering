@@ -1,8 +1,39 @@
+// ------- Slimmed Down version --------- //
+function undirectedGraphHasCycle(adjList, startVertex) {
+	// Track visits
+	const visited = {};
+	// Pass in the current vertex, the parents vertex, the matrix, and track visits
+	return hasUnCycle(startVertex, null, adjList, visited);
+}
+
+function hasUnCycle(curr, parent, adjList, visited) {
+	// Mark visited
+	visited[curr] = true;
+
+	// Loop through the neighbors
+	for (let n of adjList[curr]) {
+		if (!visited[n]) {
+			// we haven't visited this neighbor, so check if a cycle exists
+			if (hasUnCycle(n, curr, adjList, visited)) {
+				return true;
+			}
+		} else if (visited[n] && n !== parent) {
+			// We have already visited this node and it isn't the parent
+			return true;
+		}
+	}
+
+	// No cycle detected, return false
+	return false;
+}
+
+// More complicated version, that has no start node
 function detectCycleUndirected(adjList) {
 	// Track our visits
 	const visited = {};
 
 	// Loop over the vertices
+	// Note: this probably isn't needed if you have a starting vertice
 	for (let v of Object.keys(adjList)) {
 		if (!visited[v]) {
 			// Check from this vertex to see if there is a cycle.
