@@ -5,15 +5,16 @@ function maxBuySell(arr) {
 	let minSeen = arr[0];
 	// Loop through the prices
 	for (let price of arr) {
+		// Determine if profit from the smallest we've seen + this sale price
+		// is greater than the global maxProfit
+		maxProfit = Math.max(maxProfit, price - minSeen);
+
 		// If the current price is less than the minimum price seen
 		// we should update it because from this point forward, that is the
 		// best buy price.
 		if (price < minSeen) {
 			minSeen = price;
 		}
-		// Determine if profit from the smallest we've seen + this sale price
-		// is greater than the global maxProfit
-		maxProfit = Math.max(maxProfit, price - minSeen);
 	}
 	return maxProfit;
 }

@@ -24,7 +24,7 @@ function closestPoints(points, k) {
 function Point(x, y) {
 	this.x = x;
 	this.y = y;
-	this.distance = x * x + y * y;
+	this.distance = Math.sqrt(x * x + y * y);
 }
 
 class MinPointsHeap {
