@@ -4,6 +4,10 @@
 // Input: ['easter', 'trunk', 'rabbit', 'kee' ]
 // Output: true : easter -> rabbit -> trunk -> kee -> easter
 
+function circleChainedWords(arr) {
+	return Boolean;
+}
+
 // Hint 1: Graph cycles
 
 // Hint 2: DFS

@@ -17,5 +17,8 @@ function mergeListOfNumbersIntoRanges(arr) {
 		currentHigh = num;
 	}
 
+	// Add the last tracked current low and high
+	results.push([currentLow, currentHigh]);
+
 	return results;
 }

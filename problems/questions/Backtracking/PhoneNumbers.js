@@ -14,6 +14,10 @@ const letterMap = {
 	0: []
 };
 
+function phoneNumbers(number, validWords) {
+	return [];
+}
+
 // Hint 1: Think about your return value, what would allow you to track a list of words you should keep?
 
 // Hint 2: DFS
