@@ -9,3 +9,7 @@
 // 1
 // 2 3
 // 6 5 4 3
+
+// Hint 1: Levels
+
+// Hint 2: Maintain two structures...
