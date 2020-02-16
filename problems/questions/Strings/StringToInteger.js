@@ -1,5 +1,5 @@
 // Given a string, convert it to an integer without using a built-in.  You are allowed to
-// use Number(foo) on single characters only.
+// use Number(x) on single characters only.
 // If it is not a valid integer, return false.
 
 // Input: '-104'

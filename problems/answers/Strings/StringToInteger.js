@@ -3,6 +3,8 @@ function stringToInteger(str) {
 	let result = 0;
 	for (let idx = 0; idx < str.length; idx++) {
 		const char = str[idx];
+
+		// Check if we are working with a negative integer
 		if (idx === 0 && char === '-') {
 			isNegative = true;
 			continue;
