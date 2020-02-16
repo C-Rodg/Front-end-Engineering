@@ -26,3 +26,15 @@ const stairClimbing = n => {
 
 // Tip: Use memoization to vastly improve results
 // or you could use a bottom up approach
+
+const stairClimbingMultipleWays = (n, ways) => {
+	const results = Array(n + 1).fill(0);
+	results[0] = 1;
+	results[1] = 1;
+	for (let i = 2; i <= n; i++) {
+		for (let way = 1; way <= ways && way <= i; way++) {
+			results[i] += results[i - way];
+		}
+	}
+	return results[n];
+};
