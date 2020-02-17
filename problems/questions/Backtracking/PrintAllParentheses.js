@@ -11,8 +11,12 @@
 // Runtime: Exponential
 // Space: O(n)
 
-function printAllParentheses(n, leftCount, rightCount, output, r) {
+function printAllParentheses(n) {
 	// TODO:
 }
 
 // Related to Catalan numbers
+
+// Hint 1: We can use an array for modifications push/pop or a string...
+
+// Hint 2: What else do we need to track? counts...?
