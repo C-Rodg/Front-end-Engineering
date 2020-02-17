@@ -16,9 +16,15 @@
 // Output: 3, we can collect two '1' and one '2'.
 
 // Input: [0, 1, 2, 2]
-// Output: 3, we can start at idx = 1, and collect [1, 2, 2]
+// Output: 3, we can start at idx = 1 and collect [1, 2, 2]
 
 // Input: [1, 2, 3, 2, 2]
-// Output: 4, we can collect [2, 3, 2, 2]
+// Output: 4, we can start at idx = 1 and collect [2, 3, 2, 2]
 
-// Hint 1: Sliding window
+function totalFruit(arr) {
+	return Number;
+}
+
+// Hint 1: Slightly altered version of sliding window
+
+// Hint 2: Track fruit one and fruit two. When we hit fruit 3, shift.

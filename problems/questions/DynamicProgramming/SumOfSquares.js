@@ -3,6 +3,10 @@
 // Input: n = 13
 // Output: 2 because 3 squared + 2 squared = 13
 
+function sumOfSquares(n) {
+	return Number;
+}
+
 // Hint 1: Dynamic Programming
 
 // Hint 2: Get potential squares that can be used
@@ -12,3 +16,5 @@
 // Hint 4: Loop 0 -> n
 
 // Hint 5: For each iteration, loop squares and calculate
+
+// Hint 6: Can be done with 1-D or multidimensional array

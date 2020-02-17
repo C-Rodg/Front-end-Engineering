@@ -1,3 +1,7 @@
+// The main idea of this solution is to have two trackers - fruitOne & fruitTwo.
+// With each iteration we compare the currentCount to the max to be able to find the longest streak.
+// If we encounter a third fruit, we then shift fruit two back to fruit one and set fruit two as the new fruit.
+// We must then reset currentCount, but don't forget to count all previous in a row versions for what is now fruitOne.
 function fruitIntoBaskets(trees) {
 	let currentCount = 0;
 	let max = 0;
@@ -30,7 +34,7 @@ function fruitIntoBaskets(trees) {
 
 			// We must also set our count to this fruit we just picked
 			// plus the number of times in a row the previous fruit appeared
-			count = 1;
+			currentCount = 1;
 			let j = i - 1;
 			while (j >= 0 && trees[j] === fruitOne) {
 				currentCount += 1;
@@ -41,4 +45,6 @@ function fruitIntoBaskets(trees) {
 		// Check our current count against the max
 		max = Math.max(currentCount, max);
 	}
+
+	return max;
 }

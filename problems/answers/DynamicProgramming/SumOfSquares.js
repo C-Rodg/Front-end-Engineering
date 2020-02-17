@@ -8,6 +8,7 @@ function sumOfSquares(n) {
 	}
 
 	// Create an array to hold our DP solutions
+	// NOTE: we are doing this using only a one-dimensional array, can also be done multidimensionally
 	const minSums = Array(n + 1).fill(Number.MAX_SAFE_INTEGER);
 
 	// Setup our known values
