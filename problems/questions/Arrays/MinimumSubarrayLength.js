@@ -1,5 +1,5 @@
 // Given an array of positive integers and an integer 'k', find the minimal
-// length of a contiguous subarray of which the sum is equal to k.
+// length of a contiguous subarray of which the sum is greater than or equal to k.
 // If there isn't one return 0.
 
 // Input: arr = [2,3,1,2,4,3], k = 7

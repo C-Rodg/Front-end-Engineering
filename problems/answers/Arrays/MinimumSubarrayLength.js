@@ -9,20 +9,21 @@ function minimumSubarrayLength(arr, k) {
 
 	// Loop through the array
 	while (right < arr.length) {
-		currentSum += arr[right];
+		// Increase the size of the array
+		while (currentSum <= k && right < arr.length) {
+			currentSum += arr[right];
+			right++;
+		}
 
-		// current sum is big enough, get window size and attempt to shrink
-		while (currentSum >= k) {
-			// Check if this window is smaller than our current smallest
-			result = Math.min(result, right - left + 1);
+		// Decrease the size of the array and check if we have a new min
+		while (currentSum > k && left < arr.length) {
+			// Compare the size of the array
+			result = Math.min(result, right - left);
 
-			// Shrink the window, so subtract the value moving out of the window
+			// Shrink the array
 			currentSum -= arr[left];
 			left++;
 		}
-
-		// Increment
-		right += 1;
 	}
 
 	// Return 0 if sum k was never hit
