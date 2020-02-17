@@ -15,18 +15,18 @@ function convertNTreeToBT(ntree) {
 		// For all of it's children, continue adding them
 		// in that direction. If those children have children,
 		// then have them split to the opposite direction.
-		for (let c in node.children) {
+		for (let c of node.children) {
 			if (isLeft) {
-				lastNode.left = convert(node.children[c], false);
+				lastNode.left = convert(c, false);
 				lastNode = lastNode.left;
 			} else {
-				lastNode.right = convert(node.children[c], true);
+				lastNode.right = convert(c, true);
 				lastNode = lastNode.right;
 			}
 		}
 
 		// Return the node
-		return node;
+		return newNode;
 	}
 
 	// Call the recursive function to convert n-ary tree to binary tree
@@ -39,27 +39,29 @@ function convertBTToNTree(root) {
 			return;
 		}
 
-		// Create the new node and set it as our temp
+		// Create the new node to return at the end
 		const newNode = new TreeNode(node.data);
-		let temp = newNode;
+
+		// Assign a temp node so that we can continually go left or right
+		let temp = node;
 
 		// Determine the direction we're currently going
 		if (isLeft) {
 			// While we still have nodes to process in the left direction
 			while (temp.left) {
 				let child = convert(temp.left, false);
-				node.children.push(child);
+				newNode.children.push(child);
 				temp = temp.left;
 			}
 		} else {
 			// While we still have nodes to process in the right direction
 			while (temp.right) {
 				let child = convert(temp.right, true);
-				node.children.push(child);
+				newNode.children.push(child);
 				temp = temp.right;
 			}
 		}
-		return node;
+		return newNode;
 	}
 
 	// Call the recursive function to convert binary tree to n-ary

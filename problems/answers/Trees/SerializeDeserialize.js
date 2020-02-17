@@ -1,5 +1,6 @@
 function serialize(root) {
 	const result = [];
+	// do a PreOrder traversal of the tree
 	function serializeHelper(node) {
 		if (!node) {
 			result.push(null);
