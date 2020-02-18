@@ -17,4 +17,7 @@ function multitask(arr, cooldown) {
 		// Increment time by a tick
 		currentTime += 1;
 	}
+
+	// Return the time taken
+	return currentTime;
 }
