@@ -1,4 +1,4 @@
-function reconstructItinerary(tickets, start) {
+function reconstruct(tickets, start) {
 	// Create a graph
 	const adjList = {};
 	tickets.forEach(ticket => {
@@ -14,16 +14,39 @@ function reconstructItinerary(tickets, start) {
 		adjList[k].sort();
 	}
 
-	// Recursive helper function for dfs
-	const results = [];
-	function dfs(place) {
-		const destinations = adjList[place];
-		while (destinations && destinations.length > 0) {
-			dfs(destinations.shift());
+	// Recursive function that backtracks to get proper itenerary
+	function dfs(place, counter) {
+		if (counter === 0) {
+			// We've used all tickets
+			return true;
 		}
-		results.push(place);
-	}
-	dfs(start);
+		const neighbors = adjList[place];
+		if (!neighbors || neighbors.length === 0) {
+			// We've hit a dead end and we still have tickets to use
+			return false;
+		}
 
-	return results;
+		for (let n of neighbors) {
+			results.push(n);
+			counter -= 1;
+			// recurse using this neighbor route
+			if (dfs(n, counter)) {
+				return true;
+			}
+
+			// backtrack
+			counter += 1;
+			results.pop();
+		}
+
+		// No path found
+		return false;
+	}
+	// Initialze the return results with the start node
+	const results = [start];
+	if (dfs(start, tickets.length)) {
+		return results;
+	} else {
+		return []; // no path exists
+	}
 }

@@ -1,4 +1,4 @@
-function cloneDirectedGraph(node, completedNodes) {
+function cloneDirectedGraph(node, completedNodes = {}) {
 	// Base case
 	if (!node) {
 		return null;
